@@ -10,12 +10,3 @@ env/
 # YOLO / Ultralytics
 *.pt
 runs/
-yolo*.pt
-
-# Media and Outputs
-images/*
-!images/.gitkeep
-videos/*
-!videos/.gitkeep
-outputs/*
-!outputs/.gitkeep
