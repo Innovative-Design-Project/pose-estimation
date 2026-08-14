@@ -10,3 +10,4 @@ env/
 # YOLO / Ultralytics
 *.pt
 runs/
+.DS_Store
