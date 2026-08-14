@@ -105,16 +105,6 @@ def process_video(model, video_path, output_dir, device="auto", imgsz=640, conf=
 
 
 def main():
-    parser = argparse.ArgumentParser(description="YOLO Pose Estimation")
-    parser.add_argument("--model", type=str, default="yolo26m-pose.pt")
-    parser.add_argument("--images-dir", type=str, default="images")
-    parser.add_argument("--videos-dir", type=str, default="videos")
-    parser.add_argument("--output-dir", type=str, default="outputs")
-    parser.add_argument("--imgsz", type=int, default=640)
-    parser.add_argument("--conf", type=float, default=0.25)
-    parser.add_argument("--device", type=str, default=None)
-    args = parser.parse_args()
-
     base_dir = os.path.dirname(os.path.abspath(__file__))
     images_dir = os.path.join(base_dir, args.images_dir) if not os.path.isabs(args.images_dir) else args.images_dir
     videos_dir = os.path.join(base_dir, args.videos_dir) if not os.path.isabs(args.videos_dir) else args.videos_dir
