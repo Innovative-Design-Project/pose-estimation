@@ -1,0 +1,21 @@
+graph TD
+    A[Input: Images or Videos] --> B[Initialize]
+    B --> C[Hardware Detection <br> CUDA/MPS/CPU]
+    C --> D[Load YOLO Pose Model <br> yolo26m-pose.pt]
+    D --> E{Input Type?}
+    
+    E -- Image --> F[Read Image via OpenCV]
+    F --> G[Run YOLO Inference]
+    G --> H[Extract Bounding Boxes & 17 Keypoints]
+    H --> I[Filter by Confidence >= 0.50]
+    I --> J[Draw Skeleton/Overlay on Image]
+    J --> K[Save to 'outputs/' Directory]
+    
+    E -- Video --> L[Open Video Stream via OpenCV]
+    L --> M[Read Frame]
+    M --> N[Run YOLO Inference on Frame]
+    N --> O[Draw Skeleton/Overlay on Frame]
+    O --> P[Write Frame to Output Video]
+    P --> Q{More Frames?}
+    Q -- Yes --> M
+    Q -- No --> K
