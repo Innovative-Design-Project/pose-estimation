@@ -1,0 +1,4879 @@
+{
+  "yolo11n-pose": {
+    "metadata": {
+      "name": "yolo11n-pose",
+      "task": "pose",
+      "gen": "YOLO11",
+      "scale": "Nano"
+    },
+    "params_m": 2.87,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9270983934402466
+        ],
+        "mean_box_conf": 0.9271,
+        "speed_ms": {
+          "preprocess": 2.94,
+          "inference": 15.06,
+          "postprocess": 8.89,
+          "total": 26.89
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9104,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1273.1,
+                "y": 379.5,
+                "conf": 0.98
+              },
+              "left_eye": {
+                "x": 1267.4,
+                "y": 363.9,
+                "conf": 0.643
+              },
+              "right_eye": {
+                "x": 1251.5,
+                "y": 368.2,
+                "conf": 0.967
+              },
+              "left_ear": {
+                "x": 1253.2,
+                "y": 386.7,
+                "conf": 0.097
+              },
+              "right_ear": {
+                "x": 1194.4,
+                "y": 398.9,
+                "conf": 0.938
+              },
+              "left_shoulder": {
+                "x": 1318.8,
+                "y": 480.1,
+                "conf": 0.995
+              },
+              "right_shoulder": {
+                "x": 1124.9,
+                "y": 491.3,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 1446.9,
+                "y": 500.5,
+                "conf": 0.976
+              },
+              "right_elbow": {
+                "x": 964.6,
+                "y": 525.8,
+                "conf": 0.999
+              },
+              "left_wrist": {
+                "x": 1628.5,
+                "y": 474.5,
+                "conf": 0.952
+              },
+              "right_wrist": {
+                "x": 796.2,
+                "y": 495.4,
+                "conf": 0.996
+              },
+              "left_hip": {
+                "x": 1301.9,
+                "y": 789.2,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 1129.6,
+                "y": 797.3,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 1499.1,
+                "y": 882.3,
+                "conf": 0.995
+              },
+              "right_knee": {
+                "x": 986.6,
+                "y": 906.2,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 1544.6,
+                "y": 1078.9,
+                "conf": 0.962
+              },
+              "right_ankle": {
+                "x": 743.3,
+                "y": 1122.5,
+                "conf": 0.98
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.885397732257843
+        ],
+        "mean_box_conf": 0.8854,
+        "speed_ms": {
+          "preprocess": 1.93,
+          "inference": 15.92,
+          "postprocess": 10.45,
+          "total": 28.29
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.7355,
+            "visible_keypoints_over_50": 14,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 621.0,
+                "y": 363.3,
+                "conf": 0.902
+              },
+              "left_eye": {
+                "x": 603.0,
+                "y": 359.3,
+                "conf": 0.53
+              },
+              "right_eye": {
+                "x": 594.9,
+                "y": 363.9,
+                "conf": 0.857
+              },
+              "left_ear": {
+                "x": 584.9,
+                "y": 396.4,
+                "conf": 0.117
+              },
+              "right_ear": {
+                "x": 555.4,
+                "y": 416.9,
+                "conf": 0.738
+              },
+              "left_shoulder": {
+                "x": 653.5,
+                "y": 495.1,
+                "conf": 0.938
+              },
+              "right_shoulder": {
+                "x": 604.1,
+                "y": 513.3,
+                "conf": 0.974
+              },
+              "left_elbow": {
+                "x": 817.9,
+                "y": 429.8,
+                "conf": 0.815
+              },
+              "right_elbow": {
+                "x": 751.2,
+                "y": 447.1,
+                "conf": 0.962
+              },
+              "left_wrist": {
+                "x": 984.1,
+                "y": 277.6,
+                "conf": 0.855
+              },
+              "right_wrist": {
+                "x": 868.2,
+                "y": 289.8,
+                "conf": 0.958
+              },
+              "left_hip": {
+                "x": 797.1,
+                "y": 641.8,
+                "conf": 0.867
+              },
+              "right_hip": {
+                "x": 764.1,
+                "y": 666.7,
+                "conf": 0.924
+              },
+              "left_knee": {
+                "x": 909.6,
+                "y": 523.9,
+                "conf": 0.54
+              },
+              "right_knee": {
+                "x": 893.5,
+                "y": 552.5,
+                "conf": 0.725
+              },
+              "left_ankle": {
+                "x": 927.7,
+                "y": 449.2,
+                "conf": 0.339
+              },
+              "right_ankle": {
+                "x": 961.2,
+                "y": 494.4,
+                "conf": 0.464
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9044934511184692
+        ],
+        "mean_box_conf": 0.9045,
+        "speed_ms": {
+          "preprocess": 1.47,
+          "inference": 15.88,
+          "postprocess": 11.93,
+          "total": 29.28
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9767,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 209.6,
+                "y": 71.8,
+                "conf": 0.997
+              },
+              "left_eye": {
+                "x": 221.9,
+                "y": 60.8,
+                "conf": 0.992
+              },
+              "right_eye": {
+                "x": 198.2,
+                "y": 60.7,
+                "conf": 0.983
+              },
+              "left_ear": {
+                "x": 240.1,
+                "y": 71.3,
+                "conf": 0.943
+              },
+              "right_ear": {
+                "x": 183.1,
+                "y": 71.2,
+                "conf": 0.744
+              },
+              "left_shoulder": {
+                "x": 264.0,
+                "y": 143.7,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 163.2,
+                "y": 145.0,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 287.2,
+                "y": 229.8,
+                "conf": 0.992
+              },
+              "right_elbow": {
+                "x": 140.9,
+                "y": 232.6,
+                "conf": 0.988
+              },
+              "left_wrist": {
+                "x": 289.0,
+                "y": 314.5,
+                "conf": 0.991
+              },
+              "right_wrist": {
+                "x": 139.0,
+                "y": 313.7,
+                "conf": 0.985
+              },
+              "left_hip": {
+                "x": 243.8,
+                "y": 306.8,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 178.3,
+                "y": 307.4,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 241.9,
+                "y": 422.5,
+                "conf": 1.0
+              },
+              "right_knee": {
+                "x": 170.0,
+                "y": 425.3,
+                "conf": 1.0
+              },
+              "left_ankle": {
+                "x": 235.2,
+                "y": 537.6,
+                "conf": 0.996
+              },
+              "right_ankle": {
+                "x": 171.4,
+                "y": 540.5,
+                "conf": 0.996
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9235838055610657
+        ],
+        "mean_box_conf": 0.9236,
+        "speed_ms": {
+          "preprocess": 1.85,
+          "inference": 16.24,
+          "postprocess": 7.47,
+          "total": 25.57
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9157,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 654.0,
+                "y": 191.6,
+                "conf": 0.981
+              },
+              "left_eye": {
+                "x": 674.0,
+                "y": 173.5,
+                "conf": 0.972
+              },
+              "right_eye": {
+                "x": 651.2,
+                "y": 178.1,
+                "conf": 0.683
+              },
+              "left_ear": {
+                "x": 731.4,
+                "y": 193.5,
+                "conf": 0.931
+              },
+              "right_ear": {
+                "x": 666.5,
+                "y": 198.1,
+                "conf": 0.069
+              },
+              "left_shoulder": {
+                "x": 788.5,
+                "y": 287.8,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 649.6,
+                "y": 282.7,
+                "conf": 0.995
+              },
+              "left_elbow": {
+                "x": 908.0,
+                "y": 296.9,
+                "conf": 0.999
+              },
+              "right_elbow": {
+                "x": 513.9,
+                "y": 286.3,
+                "conf": 0.991
+              },
+              "left_wrist": {
+                "x": 1115.3,
+                "y": 267.6,
+                "conf": 0.996
+              },
+              "right_wrist": {
+                "x": 336.3,
+                "y": 266.1,
+                "conf": 0.982
+              },
+              "left_hip": {
+                "x": 747.1,
+                "y": 579.4,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 617.1,
+                "y": 574.5,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 877.7,
+                "y": 666.8,
+                "conf": 0.999
+              },
+              "right_knee": {
+                "x": 466.2,
+                "y": 672.9,
+                "conf": 0.998
+              },
+              "left_ankle": {
+                "x": 1054.4,
+                "y": 842.3,
+                "conf": 0.988
+              },
+              "right_ankle": {
+                "x": 369.2,
+                "y": 866.9,
+                "conf": 0.983
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 27.51,
+      "fps": 36.4,
+      "mean_person_confidence": 0.9101,
+      "mean_keypoint_confidence": 0.8846
+    }
+  },
+  "yolo11s-pose": {
+    "metadata": {
+      "name": "yolo11s-pose",
+      "task": "pose",
+      "gen": "YOLO11",
+      "scale": "Small"
+    },
+    "params_m": 9.92,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9188553094863892
+        ],
+        "mean_box_conf": 0.9189,
+        "speed_ms": {
+          "preprocess": 1.77,
+          "inference": 13.48,
+          "postprocess": 6.2,
+          "total": 21.45
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9033,
+            "visible_keypoints_over_50": 15,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1279.6,
+                "y": 384.7,
+                "conf": 0.978
+              },
+              "left_eye": {
+                "x": 1277.3,
+                "y": 367.2,
+                "conf": 0.5
+              },
+              "right_eye": {
+                "x": 1256.1,
+                "y": 373.2,
+                "conf": 0.971
+              },
+              "left_ear": {
+                "x": 1255.0,
+                "y": 384.0,
+                "conf": 0.041
+              },
+              "right_ear": {
+                "x": 1188.5,
+                "y": 397.1,
+                "conf": 0.97
+              },
+              "left_shoulder": {
+                "x": 1292.9,
+                "y": 490.2,
+                "conf": 0.996
+              },
+              "right_shoulder": {
+                "x": 1105.9,
+                "y": 509.0,
+                "conf": 1.0
+              },
+              "left_elbow": {
+                "x": 1458.7,
+                "y": 509.3,
+                "conf": 0.994
+              },
+              "right_elbow": {
+                "x": 971.1,
+                "y": 526.9,
+                "conf": 1.0
+              },
+              "left_wrist": {
+                "x": 1627.5,
+                "y": 487.7,
+                "conf": 0.992
+              },
+              "right_wrist": {
+                "x": 779.9,
+                "y": 497.4,
+                "conf": 1.0
+              },
+              "left_hip": {
+                "x": 1286.2,
+                "y": 777.5,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 1123.5,
+                "y": 792.3,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 1495.3,
+                "y": 882.4,
+                "conf": 0.997
+              },
+              "right_knee": {
+                "x": 969.2,
+                "y": 922.8,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 1548.0,
+                "y": 1072.8,
+                "conf": 0.944
+              },
+              "right_ankle": {
+                "x": 750.4,
+                "y": 1142.3,
+                "conf": 0.974
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9325523972511292
+        ],
+        "mean_box_conf": 0.9326,
+        "speed_ms": {
+          "preprocess": 2.54,
+          "inference": 30.0,
+          "postprocess": 10.21,
+          "total": 42.75
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.7593,
+            "visible_keypoints_over_50": 15,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 610.2,
+                "y": 365.4,
+                "conf": 0.816
+              },
+              "left_eye": {
+                "x": 601.9,
+                "y": 361.4,
+                "conf": 0.228
+              },
+              "right_eye": {
+                "x": 584.0,
+                "y": 364.8,
+                "conf": 0.774
+              },
+              "left_ear": {
+                "x": 588.9,
+                "y": 398.1,
+                "conf": 0.035
+              },
+              "right_ear": {
+                "x": 551.5,
+                "y": 421.9,
+                "conf": 0.754
+              },
+              "left_shoulder": {
+                "x": 643.6,
+                "y": 488.6,
+                "conf": 0.897
+              },
+              "right_shoulder": {
+                "x": 607.2,
+                "y": 520.2,
+                "conf": 0.99
+              },
+              "left_elbow": {
+                "x": 767.3,
+                "y": 416.5,
+                "conf": 0.68
+              },
+              "right_elbow": {
+                "x": 731.7,
+                "y": 472.1,
+                "conf": 0.989
+              },
+              "left_wrist": {
+                "x": 884.6,
+                "y": 284.1,
+                "conf": 0.816
+              },
+              "right_wrist": {
+                "x": 852.9,
+                "y": 312.3,
+                "conf": 0.991
+              },
+              "left_hip": {
+                "x": 806.4,
+                "y": 634.1,
+                "conf": 0.921
+              },
+              "right_hip": {
+                "x": 783.4,
+                "y": 663.1,
+                "conf": 0.975
+              },
+              "left_knee": {
+                "x": 907.3,
+                "y": 463.9,
+                "conf": 0.757
+              },
+              "right_knee": {
+                "x": 925.6,
+                "y": 486.2,
+                "conf": 0.921
+              },
+              "left_ankle": {
+                "x": 1000.5,
+                "y": 402.6,
+                "conf": 0.587
+              },
+              "right_ankle": {
+                "x": 1039.2,
+                "y": 393.2,
+                "conf": 0.776
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9345721006393433
+        ],
+        "mean_box_conf": 0.9346,
+        "speed_ms": {
+          "preprocess": 1.25,
+          "inference": 32.25,
+          "postprocess": 13.78,
+          "total": 47.29
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.971,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 213.0,
+                "y": 69.0,
+                "conf": 0.997
+              },
+              "left_eye": {
+                "x": 224.3,
+                "y": 59.6,
+                "conf": 0.982
+              },
+              "right_eye": {
+                "x": 202.1,
+                "y": 60.4,
+                "conf": 0.989
+              },
+              "left_ear": {
+                "x": 241.9,
+                "y": 69.6,
+                "conf": 0.693
+              },
+              "right_ear": {
+                "x": 185.9,
+                "y": 69.5,
+                "conf": 0.895
+              },
+              "left_shoulder": {
+                "x": 258.7,
+                "y": 141.5,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 167.8,
+                "y": 140.4,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 284.1,
+                "y": 232.2,
+                "conf": 0.993
+              },
+              "right_elbow": {
+                "x": 145.0,
+                "y": 230.5,
+                "conf": 0.994
+              },
+              "left_wrist": {
+                "x": 283.2,
+                "y": 312.8,
+                "conf": 0.985
+              },
+              "right_wrist": {
+                "x": 143.0,
+                "y": 313.2,
+                "conf": 0.988
+              },
+              "left_hip": {
+                "x": 242.8,
+                "y": 306.9,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 184.1,
+                "y": 306.8,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 240.5,
+                "y": 417.4,
+                "conf": 1.0
+              },
+              "right_knee": {
+                "x": 174.0,
+                "y": 421.5,
+                "conf": 1.0
+              },
+              "left_ankle": {
+                "x": 233.9,
+                "y": 530.3,
+                "conf": 0.996
+              },
+              "right_ankle": {
+                "x": 168.1,
+                "y": 537.5,
+                "conf": 0.996
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9207507371902466
+        ],
+        "mean_box_conf": 0.9208,
+        "speed_ms": {
+          "preprocess": 1.49,
+          "inference": 32.88,
+          "postprocess": 20.33,
+          "total": 54.7
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9284,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 656.4,
+                "y": 193.3,
+                "conf": 0.994
+              },
+              "left_eye": {
+                "x": 677.0,
+                "y": 182.8,
+                "conf": 0.992
+              },
+              "right_eye": {
+                "x": 654.8,
+                "y": 177.2,
+                "conf": 0.814
+              },
+              "left_ear": {
+                "x": 717.8,
+                "y": 198.1,
+                "conf": 0.968
+              },
+              "right_ear": {
+                "x": 655.7,
+                "y": 183.1,
+                "conf": 0.076
+              },
+              "left_shoulder": {
+                "x": 771.2,
+                "y": 297.6,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 636.5,
+                "y": 287.2,
+                "conf": 0.997
+              },
+              "left_elbow": {
+                "x": 915.9,
+                "y": 288.7,
+                "conf": 0.999
+              },
+              "right_elbow": {
+                "x": 513.9,
+                "y": 282.6,
+                "conf": 0.987
+              },
+              "left_wrist": {
+                "x": 1088.5,
+                "y": 285.6,
+                "conf": 0.998
+              },
+              "right_wrist": {
+                "x": 314.9,
+                "y": 266.0,
+                "conf": 0.974
+              },
+              "left_hip": {
+                "x": 747.3,
+                "y": 589.1,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 622.7,
+                "y": 575.5,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 907.7,
+                "y": 706.9,
+                "conf": 1.0
+              },
+              "right_knee": {
+                "x": 455.4,
+                "y": 669.2,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 1093.8,
+                "y": 913.3,
+                "conf": 0.995
+              },
+              "right_ankle": {
+                "x": 379.2,
+                "y": 863.2,
+                "conf": 0.991
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 41.55,
+      "fps": 24.1,
+      "mean_person_confidence": 0.9267,
+      "mean_keypoint_confidence": 0.8905
+    }
+  },
+  "yolo11m-pose": {
+    "metadata": {
+      "name": "yolo11m-pose",
+      "task": "pose",
+      "gen": "YOLO11",
+      "scale": "Medium"
+    },
+    "params_m": 20.91,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.937817394733429
+        ],
+        "mean_box_conf": 0.9378,
+        "speed_ms": {
+          "preprocess": 1.91,
+          "inference": 32.25,
+          "postprocess": 14.42,
+          "total": 48.58
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9035,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1270.1,
+                "y": 387.6,
+                "conf": 0.98
+              },
+              "left_eye": {
+                "x": 1273.6,
+                "y": 369.2,
+                "conf": 0.569
+              },
+              "right_eye": {
+                "x": 1256.2,
+                "y": 375.6,
+                "conf": 0.98
+              },
+              "left_ear": {
+                "x": 1253.0,
+                "y": 380.5,
+                "conf": 0.037
+              },
+              "right_ear": {
+                "x": 1197.1,
+                "y": 392.3,
+                "conf": 0.973
+              },
+              "left_shoulder": {
+                "x": 1293.3,
+                "y": 481.8,
+                "conf": 0.993
+              },
+              "right_shoulder": {
+                "x": 1132.8,
+                "y": 515.0,
+                "conf": 0.998
+              },
+              "left_elbow": {
+                "x": 1474.6,
+                "y": 513.3,
+                "conf": 0.986
+              },
+              "right_elbow": {
+                "x": 967.1,
+                "y": 509.1,
+                "conf": 0.999
+              },
+              "left_wrist": {
+                "x": 1621.9,
+                "y": 481.7,
+                "conf": 0.978
+              },
+              "right_wrist": {
+                "x": 776.3,
+                "y": 502.7,
+                "conf": 0.998
+              },
+              "left_hip": {
+                "x": 1304.5,
+                "y": 768.7,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 1162.1,
+                "y": 792.0,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 1501.4,
+                "y": 854.7,
+                "conf": 0.993
+              },
+              "right_knee": {
+                "x": 995.9,
+                "y": 950.3,
+                "conf": 0.996
+              },
+              "left_ankle": {
+                "x": 1554.0,
+                "y": 1090.1,
+                "conf": 0.935
+              },
+              "right_ankle": {
+                "x": 773.4,
+                "y": 1106.6,
+                "conf": 0.945
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9416760802268982
+        ],
+        "mean_box_conf": 0.9417,
+        "speed_ms": {
+          "preprocess": 1.6,
+          "inference": 43.65,
+          "postprocess": 17.99,
+          "total": 63.24
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.8118,
+            "visible_keypoints_over_50": 15,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 617.7,
+                "y": 369.3,
+                "conf": 0.857
+              },
+              "left_eye": {
+                "x": 608.8,
+                "y": 365.5,
+                "conf": 0.344
+              },
+              "right_eye": {
+                "x": 594.4,
+                "y": 373.1,
+                "conf": 0.886
+              },
+              "left_ear": {
+                "x": 587.6,
+                "y": 408.1,
+                "conf": 0.081
+              },
+              "right_ear": {
+                "x": 570.1,
+                "y": 428.4,
+                "conf": 0.903
+              },
+              "left_shoulder": {
+                "x": 646.7,
+                "y": 491.1,
+                "conf": 0.893
+              },
+              "right_shoulder": {
+                "x": 610.7,
+                "y": 498.9,
+                "conf": 0.988
+              },
+              "left_elbow": {
+                "x": 771.9,
+                "y": 416.1,
+                "conf": 0.68
+              },
+              "right_elbow": {
+                "x": 757.7,
+                "y": 416.9,
+                "conf": 0.99
+              },
+              "left_wrist": {
+                "x": 873.1,
+                "y": 298.9,
+                "conf": 0.699
+              },
+              "right_wrist": {
+                "x": 875.5,
+                "y": 294.1,
+                "conf": 0.988
+              },
+              "left_hip": {
+                "x": 818.8,
+                "y": 651.7,
+                "conf": 0.962
+              },
+              "right_hip": {
+                "x": 791.8,
+                "y": 673.9,
+                "conf": 0.988
+              },
+              "left_knee": {
+                "x": 940.6,
+                "y": 475.8,
+                "conf": 0.86
+              },
+              "right_knee": {
+                "x": 903.9,
+                "y": 496.8,
+                "conf": 0.954
+              },
+              "left_ankle": {
+                "x": 988.4,
+                "y": 393.7,
+                "conf": 0.823
+              },
+              "right_ankle": {
+                "x": 995.6,
+                "y": 436.7,
+                "conf": 0.905
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9360529780387878
+        ],
+        "mean_box_conf": 0.9361,
+        "speed_ms": {
+          "preprocess": 1.49,
+          "inference": 38.95,
+          "postprocess": 16.91,
+          "total": 57.36
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.981,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 212.3,
+                "y": 70.7,
+                "conf": 0.998
+              },
+              "left_eye": {
+                "x": 222.1,
+                "y": 60.5,
+                "conf": 0.988
+              },
+              "right_eye": {
+                "x": 201.4,
+                "y": 61.4,
+                "conf": 0.993
+              },
+              "left_ear": {
+                "x": 237.0,
+                "y": 70.8,
+                "conf": 0.821
+              },
+              "right_ear": {
+                "x": 185.1,
+                "y": 73.1,
+                "conf": 0.93
+              },
+              "left_shoulder": {
+                "x": 257.9,
+                "y": 143.9,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 165.8,
+                "y": 145.5,
+                "conf": 1.0
+              },
+              "left_elbow": {
+                "x": 283.1,
+                "y": 230.1,
+                "conf": 0.993
+              },
+              "right_elbow": {
+                "x": 146.6,
+                "y": 232.1,
+                "conf": 0.997
+              },
+              "left_wrist": {
+                "x": 282.3,
+                "y": 309.1,
+                "conf": 0.99
+              },
+              "right_wrist": {
+                "x": 142.5,
+                "y": 311.2,
+                "conf": 0.995
+              },
+              "left_hip": {
+                "x": 243.6,
+                "y": 305.0,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 182.4,
+                "y": 304.7,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 240.2,
+                "y": 421.7,
+                "conf": 0.999
+              },
+              "right_knee": {
+                "x": 174.0,
+                "y": 423.4,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 236.6,
+                "y": 542.8,
+                "conf": 0.987
+              },
+              "right_ankle": {
+                "x": 167.5,
+                "y": 537.5,
+                "conf": 0.989
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9354175925254822
+        ],
+        "mean_box_conf": 0.9354,
+        "speed_ms": {
+          "preprocess": 1.76,
+          "inference": 37.99,
+          "postprocess": 15.53,
+          "total": 55.28
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9151,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 657.1,
+                "y": 198.7,
+                "conf": 0.995
+              },
+              "left_eye": {
+                "x": 670.2,
+                "y": 176.8,
+                "conf": 0.994
+              },
+              "right_eye": {
+                "x": 653.8,
+                "y": 175.7,
+                "conf": 0.75
+              },
+              "left_ear": {
+                "x": 723.9,
+                "y": 188.4,
+                "conf": 0.991
+              },
+              "right_ear": {
+                "x": 676.2,
+                "y": 191.0,
+                "conf": 0.037
+              },
+              "left_shoulder": {
+                "x": 793.5,
+                "y": 301.7,
+                "conf": 1.0
+              },
+              "right_shoulder": {
+                "x": 632.3,
+                "y": 292.0,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 966.3,
+                "y": 285.0,
+                "conf": 0.999
+              },
+              "right_elbow": {
+                "x": 477.3,
+                "y": 300.5,
+                "conf": 0.989
+              },
+              "left_wrist": {
+                "x": 1106.5,
+                "y": 283.8,
+                "conf": 0.99
+              },
+              "right_wrist": {
+                "x": 326.4,
+                "y": 286.7,
+                "conf": 0.934
+              },
+              "left_hip": {
+                "x": 762.4,
+                "y": 598.2,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 613.7,
+                "y": 583.6,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 940.9,
+                "y": 735.8,
+                "conf": 0.998
+              },
+              "right_knee": {
+                "x": 451.7,
+                "y": 657.2,
+                "conf": 0.997
+              },
+              "left_ankle": {
+                "x": 1119.0,
+                "y": 910.0,
+                "conf": 0.941
+              },
+              "right_ankle": {
+                "x": 392.1,
+                "y": 876.4,
+                "conf": 0.944
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 56.12,
+      "fps": 17.8,
+      "mean_person_confidence": 0.9377,
+      "mean_keypoint_confidence": 0.9029
+    }
+  },
+  "yolo11l-pose": {
+    "metadata": {
+      "name": "yolo11l-pose",
+      "task": "pose",
+      "gen": "YOLO11",
+      "scale": "Large"
+    },
+    "params_m": 26.17,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9409336447715759
+        ],
+        "mean_box_conf": 0.9409,
+        "speed_ms": {
+          "preprocess": 1.7,
+          "inference": 33.2,
+          "postprocess": 11.74,
+          "total": 46.65
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9138,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1273.1,
+                "y": 389.7,
+                "conf": 0.977
+              },
+              "left_eye": {
+                "x": 1271.4,
+                "y": 374.6,
+                "conf": 0.726
+              },
+              "right_eye": {
+                "x": 1250.0,
+                "y": 371.7,
+                "conf": 0.971
+              },
+              "left_ear": {
+                "x": 1259.5,
+                "y": 398.9,
+                "conf": 0.14
+              },
+              "right_ear": {
+                "x": 1191.8,
+                "y": 394.7,
+                "conf": 0.946
+              },
+              "left_shoulder": {
+                "x": 1289.6,
+                "y": 509.5,
+                "conf": 0.988
+              },
+              "right_shoulder": {
+                "x": 1113.2,
+                "y": 511.1,
+                "conf": 0.997
+              },
+              "left_elbow": {
+                "x": 1443.0,
+                "y": 517.7,
+                "conf": 0.965
+              },
+              "right_elbow": {
+                "x": 944.4,
+                "y": 510.1,
+                "conf": 0.993
+              },
+              "left_wrist": {
+                "x": 1617.5,
+                "y": 491.6,
+                "conf": 0.942
+              },
+              "right_wrist": {
+                "x": 786.3,
+                "y": 513.8,
+                "conf": 0.986
+              },
+              "left_hip": {
+                "x": 1295.5,
+                "y": 768.8,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 1140.1,
+                "y": 776.2,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 1494.1,
+                "y": 886.9,
+                "conf": 0.993
+              },
+              "right_knee": {
+                "x": 967.3,
+                "y": 938.7,
+                "conf": 0.996
+              },
+              "left_ankle": {
+                "x": 1567.5,
+                "y": 1071.4,
+                "conf": 0.956
+              },
+              "right_ankle": {
+                "x": 769.5,
+                "y": 1133.7,
+                "conf": 0.962
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9373310804367065
+        ],
+        "mean_box_conf": 0.9373,
+        "speed_ms": {
+          "preprocess": 1.65,
+          "inference": 33.97,
+          "postprocess": 12.92,
+          "total": 48.54
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.8604,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 614.8,
+                "y": 373.0,
+                "conf": 0.942
+              },
+              "left_eye": {
+                "x": 606.6,
+                "y": 367.4,
+                "conf": 0.548
+              },
+              "right_eye": {
+                "x": 595.6,
+                "y": 369.2,
+                "conf": 0.948
+              },
+              "left_ear": {
+                "x": 589.5,
+                "y": 404.0,
+                "conf": 0.224
+              },
+              "right_ear": {
+                "x": 572.5,
+                "y": 412.1,
+                "conf": 0.968
+              },
+              "left_shoulder": {
+                "x": 630.4,
+                "y": 528.1,
+                "conf": 0.978
+              },
+              "right_shoulder": {
+                "x": 631.6,
+                "y": 511.8,
+                "conf": 0.998
+              },
+              "left_elbow": {
+                "x": 778.8,
+                "y": 436.6,
+                "conf": 0.776
+              },
+              "right_elbow": {
+                "x": 758.9,
+                "y": 398.1,
+                "conf": 0.994
+              },
+              "left_wrist": {
+                "x": 876.5,
+                "y": 266.4,
+                "conf": 0.678
+              },
+              "right_wrist": {
+                "x": 857.6,
+                "y": 274.9,
+                "conf": 0.986
+              },
+              "left_hip": {
+                "x": 809.3,
+                "y": 677.9,
+                "conf": 0.983
+              },
+              "right_hip": {
+                "x": 806.1,
+                "y": 687.8,
+                "conf": 0.995
+              },
+              "left_knee": {
+                "x": 927.8,
+                "y": 468.5,
+                "conf": 0.9
+              },
+              "right_knee": {
+                "x": 907.0,
+                "y": 481.0,
+                "conf": 0.967
+              },
+              "left_ankle": {
+                "x": 1015.2,
+                "y": 363.5,
+                "conf": 0.832
+              },
+              "right_ankle": {
+                "x": 1005.9,
+                "y": 361.6,
+                "conf": 0.909
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9420773386955261
+        ],
+        "mean_box_conf": 0.9421,
+        "speed_ms": {
+          "preprocess": 1.55,
+          "inference": 43.62,
+          "postprocess": 6.08,
+          "total": 51.25
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9728,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 212.9,
+                "y": 70.1,
+                "conf": 0.999
+              },
+              "left_eye": {
+                "x": 222.9,
+                "y": 61.2,
+                "conf": 0.988
+              },
+              "right_eye": {
+                "x": 201.8,
+                "y": 62.1,
+                "conf": 0.994
+              },
+              "left_ear": {
+                "x": 235.1,
+                "y": 72.9,
+                "conf": 0.777
+              },
+              "right_ear": {
+                "x": 185.2,
+                "y": 74.5,
+                "conf": 0.939
+              },
+              "left_shoulder": {
+                "x": 259.2,
+                "y": 143.9,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 164.3,
+                "y": 145.9,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 283.9,
+                "y": 228.2,
+                "conf": 0.989
+              },
+              "right_elbow": {
+                "x": 144.2,
+                "y": 231.9,
+                "conf": 0.994
+              },
+              "left_wrist": {
+                "x": 283.5,
+                "y": 308.4,
+                "conf": 0.986
+              },
+              "right_wrist": {
+                "x": 139.9,
+                "y": 312.2,
+                "conf": 0.993
+              },
+              "left_hip": {
+                "x": 241.0,
+                "y": 307.2,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 179.9,
+                "y": 306.6,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 239.7,
+                "y": 422.1,
+                "conf": 0.997
+              },
+              "right_knee": {
+                "x": 169.8,
+                "y": 421.9,
+                "conf": 0.997
+              },
+              "left_ankle": {
+                "x": 227.8,
+                "y": 537.0,
+                "conf": 0.942
+              },
+              "right_ankle": {
+                "x": 170.9,
+                "y": 545.3,
+                "conf": 0.948
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9558109641075134
+        ],
+        "mean_box_conf": 0.9558,
+        "speed_ms": {
+          "preprocess": 2.34,
+          "inference": 36.08,
+          "postprocess": 11.87,
+          "total": 50.29
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9085,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 654.3,
+                "y": 196.5,
+                "conf": 0.981
+              },
+              "left_eye": {
+                "x": 673.8,
+                "y": 179.1,
+                "conf": 0.977
+              },
+              "right_eye": {
+                "x": 656.2,
+                "y": 177.8,
+                "conf": 0.733
+              },
+              "left_ear": {
+                "x": 727.3,
+                "y": 194.3,
+                "conf": 0.977
+              },
+              "right_ear": {
+                "x": 662.6,
+                "y": 186.1,
+                "conf": 0.079
+              },
+              "left_shoulder": {
+                "x": 801.2,
+                "y": 297.1,
+                "conf": 0.997
+              },
+              "right_shoulder": {
+                "x": 619.7,
+                "y": 291.0,
+                "conf": 0.994
+              },
+              "left_elbow": {
+                "x": 954.8,
+                "y": 288.9,
+                "conf": 0.99
+              },
+              "right_elbow": {
+                "x": 474.3,
+                "y": 285.1,
+                "conf": 0.97
+              },
+              "left_wrist": {
+                "x": 1105.2,
+                "y": 291.4,
+                "conf": 0.974
+              },
+              "right_wrist": {
+                "x": 325.0,
+                "y": 265.9,
+                "conf": 0.904
+              },
+              "left_hip": {
+                "x": 776.8,
+                "y": 579.8,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 621.4,
+                "y": 571.8,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 927.0,
+                "y": 718.3,
+                "conf": 0.995
+              },
+              "right_knee": {
+                "x": 458.6,
+                "y": 682.6,
+                "conf": 0.993
+              },
+              "left_ankle": {
+                "x": 1085.3,
+                "y": 894.8,
+                "conf": 0.942
+              },
+              "right_ankle": {
+                "x": 427.0,
+                "y": 853.8,
+                "conf": 0.938
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 49.18,
+      "fps": 20.3,
+      "mean_person_confidence": 0.944,
+      "mean_keypoint_confidence": 0.9139
+    }
+  },
+  "yolo11x-pose": {
+    "metadata": {
+      "name": "yolo11x-pose",
+      "task": "pose",
+      "gen": "YOLO11",
+      "scale": "XLarge"
+    },
+    "params_m": 58.8,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9408540725708008
+        ],
+        "mean_box_conf": 0.9409,
+        "speed_ms": {
+          "preprocess": 1.64,
+          "inference": 61.23,
+          "postprocess": 22.0,
+          "total": 84.87
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9055,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1271.9,
+                "y": 388.5,
+                "conf": 0.985
+              },
+              "left_eye": {
+                "x": 1273.0,
+                "y": 372.4,
+                "conf": 0.678
+              },
+              "right_eye": {
+                "x": 1253.0,
+                "y": 370.1,
+                "conf": 0.991
+              },
+              "left_ear": {
+                "x": 1246.9,
+                "y": 395.2,
+                "conf": 0.073
+              },
+              "right_ear": {
+                "x": 1191.4,
+                "y": 390.9,
+                "conf": 0.991
+              },
+              "left_shoulder": {
+                "x": 1304.8,
+                "y": 485.9,
+                "conf": 0.995
+              },
+              "right_shoulder": {
+                "x": 1107.4,
+                "y": 512.1,
+                "conf": 0.997
+              },
+              "left_elbow": {
+                "x": 1472.0,
+                "y": 502.5,
+                "conf": 0.981
+              },
+              "right_elbow": {
+                "x": 937.8,
+                "y": 499.8,
+                "conf": 0.988
+              },
+              "left_wrist": {
+                "x": 1635.4,
+                "y": 479.2,
+                "conf": 0.957
+              },
+              "right_wrist": {
+                "x": 790.6,
+                "y": 507.9,
+                "conf": 0.967
+              },
+              "left_hip": {
+                "x": 1305.3,
+                "y": 787.2,
+                "conf": 0.998
+              },
+              "right_hip": {
+                "x": 1133.9,
+                "y": 801.7,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 1494.9,
+                "y": 863.8,
+                "conf": 0.991
+              },
+              "right_knee": {
+                "x": 972.1,
+                "y": 933.9,
+                "conf": 0.99
+              },
+              "left_ankle": {
+                "x": 1549.9,
+                "y": 1098.6,
+                "conf": 0.916
+              },
+              "right_ankle": {
+                "x": 805.0,
+                "y": 1121.8,
+                "conf": 0.895
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.944217324256897
+        ],
+        "mean_box_conf": 0.9442,
+        "speed_ms": {
+          "preprocess": 1.38,
+          "inference": 60.55,
+          "postprocess": 25.47,
+          "total": 87.4
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.7969,
+            "visible_keypoints_over_50": 15,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 619.4,
+                "y": 373.0,
+                "conf": 0.836
+              },
+              "left_eye": {
+                "x": 613.4,
+                "y": 364.8,
+                "conf": 0.431
+              },
+              "right_eye": {
+                "x": 600.4,
+                "y": 369.5,
+                "conf": 0.849
+              },
+              "left_ear": {
+                "x": 595.5,
+                "y": 404.2,
+                "conf": 0.1
+              },
+              "right_ear": {
+                "x": 578.9,
+                "y": 416.6,
+                "conf": 0.745
+              },
+              "left_shoulder": {
+                "x": 614.6,
+                "y": 492.5,
+                "conf": 0.821
+              },
+              "right_shoulder": {
+                "x": 639.7,
+                "y": 486.6,
+                "conf": 0.931
+              },
+              "left_elbow": {
+                "x": 733.4,
+                "y": 394.2,
+                "conf": 0.687
+              },
+              "right_elbow": {
+                "x": 770.2,
+                "y": 400.6,
+                "conf": 0.899
+              },
+              "left_wrist": {
+                "x": 864.2,
+                "y": 281.3,
+                "conf": 0.686
+              },
+              "right_wrist": {
+                "x": 854.3,
+                "y": 290.7,
+                "conf": 0.888
+              },
+              "left_hip": {
+                "x": 775.0,
+                "y": 659.2,
+                "conf": 0.956
+              },
+              "right_hip": {
+                "x": 781.4,
+                "y": 669.8,
+                "conf": 0.971
+              },
+              "left_knee": {
+                "x": 915.0,
+                "y": 485.6,
+                "conf": 0.91
+              },
+              "right_knee": {
+                "x": 927.0,
+                "y": 452.0,
+                "conf": 0.94
+              },
+              "left_ankle": {
+                "x": 1040.5,
+                "y": 408.1,
+                "conf": 0.939
+              },
+              "right_ankle": {
+                "x": 1024.2,
+                "y": 375.2,
+                "conf": 0.959
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9397100210189819
+        ],
+        "mean_box_conf": 0.9397,
+        "speed_ms": {
+          "preprocess": 1.46,
+          "inference": 65.96,
+          "postprocess": 26.83,
+          "total": 94.26
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9694,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 212.9,
+                "y": 71.0,
+                "conf": 0.996
+              },
+              "left_eye": {
+                "x": 221.6,
+                "y": 61.4,
+                "conf": 0.977
+              },
+              "right_eye": {
+                "x": 202.6,
+                "y": 62.5,
+                "conf": 0.984
+              },
+              "left_ear": {
+                "x": 234.7,
+                "y": 72.7,
+                "conf": 0.755
+              },
+              "right_ear": {
+                "x": 187.3,
+                "y": 75.0,
+                "conf": 0.849
+              },
+              "left_shoulder": {
+                "x": 262.5,
+                "y": 146.1,
+                "conf": 0.998
+              },
+              "right_shoulder": {
+                "x": 165.4,
+                "y": 146.8,
+                "conf": 0.998
+              },
+              "left_elbow": {
+                "x": 283.5,
+                "y": 230.6,
+                "conf": 0.989
+              },
+              "right_elbow": {
+                "x": 146.8,
+                "y": 231.6,
+                "conf": 0.992
+              },
+              "left_wrist": {
+                "x": 282.8,
+                "y": 308.2,
+                "conf": 0.982
+              },
+              "right_wrist": {
+                "x": 142.2,
+                "y": 311.4,
+                "conf": 0.985
+              },
+              "left_hip": {
+                "x": 242.3,
+                "y": 308.0,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 178.7,
+                "y": 306.9,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 236.1,
+                "y": 419.5,
+                "conf": 0.999
+              },
+              "right_knee": {
+                "x": 176.6,
+                "y": 420.9,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 240.9,
+                "y": 537.6,
+                "conf": 0.988
+              },
+              "right_ankle": {
+                "x": 162.2,
+                "y": 539.3,
+                "conf": 0.989
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9427576065063477
+        ],
+        "mean_box_conf": 0.9428,
+        "speed_ms": {
+          "preprocess": 1.61,
+          "inference": 92.41,
+          "postprocess": 23.07,
+          "total": 117.09
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9138,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 654.7,
+                "y": 198.7,
+                "conf": 0.994
+              },
+              "left_eye": {
+                "x": 672.2,
+                "y": 180.2,
+                "conf": 0.997
+              },
+              "right_eye": {
+                "x": 652.7,
+                "y": 178.7,
+                "conf": 0.754
+              },
+              "left_ear": {
+                "x": 728.7,
+                "y": 194.2,
+                "conf": 0.997
+              },
+              "right_ear": {
+                "x": 659.0,
+                "y": 192.7,
+                "conf": 0.03
+              },
+              "left_shoulder": {
+                "x": 793.5,
+                "y": 300.7,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 620.9,
+                "y": 295.1,
+                "conf": 0.998
+              },
+              "left_elbow": {
+                "x": 965.0,
+                "y": 293.4,
+                "conf": 0.995
+              },
+              "right_elbow": {
+                "x": 461.3,
+                "y": 296.8,
+                "conf": 0.988
+              },
+              "left_wrist": {
+                "x": 1110.0,
+                "y": 287.7,
+                "conf": 0.975
+              },
+              "right_wrist": {
+                "x": 324.4,
+                "y": 280.7,
+                "conf": 0.942
+              },
+              "left_hip": {
+                "x": 774.4,
+                "y": 603.2,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 621.8,
+                "y": 591.5,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 924.8,
+                "y": 740.5,
+                "conf": 0.996
+              },
+              "right_knee": {
+                "x": 446.7,
+                "y": 660.0,
+                "conf": 0.995
+              },
+              "left_ankle": {
+                "x": 1087.4,
+                "y": 904.8,
+                "conf": 0.929
+              },
+              "right_ankle": {
+                "x": 406.1,
+                "y": 878.4,
+                "conf": 0.945
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 95.9,
+      "fps": 10.4,
+      "mean_person_confidence": 0.9419,
+      "mean_keypoint_confidence": 0.8964
+    }
+  },
+  "yolov8n-pose": {
+    "metadata": {
+      "name": "yolov8n-pose",
+      "task": "pose",
+      "gen": "YOLOv8",
+      "scale": "Nano"
+    },
+    "params_m": 3.3,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9010674357414246
+        ],
+        "mean_box_conf": 0.9011,
+        "speed_ms": {
+          "preprocess": 1.61,
+          "inference": 5.44,
+          "postprocess": 2.67,
+          "total": 9.71
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9212,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1267.3,
+                "y": 383.8,
+                "conf": 0.986
+              },
+              "left_eye": {
+                "x": 1267.2,
+                "y": 360.9,
+                "conf": 0.844
+              },
+              "right_eye": {
+                "x": 1244.8,
+                "y": 368.2,
+                "conf": 0.973
+              },
+              "left_ear": {
+                "x": 1261.3,
+                "y": 381.4,
+                "conf": 0.197
+              },
+              "right_ear": {
+                "x": 1186.7,
+                "y": 396.8,
+                "conf": 0.871
+              },
+              "left_shoulder": {
+                "x": 1297.2,
+                "y": 482.8,
+                "conf": 0.99
+              },
+              "right_shoulder": {
+                "x": 1116.2,
+                "y": 490.9,
+                "conf": 0.997
+              },
+              "left_elbow": {
+                "x": 1460.9,
+                "y": 521.1,
+                "conf": 0.98
+              },
+              "right_elbow": {
+                "x": 950.1,
+                "y": 519.0,
+                "conf": 0.997
+              },
+              "left_wrist": {
+                "x": 1630.5,
+                "y": 476.8,
+                "conf": 0.958
+              },
+              "right_wrist": {
+                "x": 781.8,
+                "y": 508.2,
+                "conf": 0.991
+              },
+              "left_hip": {
+                "x": 1292.1,
+                "y": 794.6,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 1133.7,
+                "y": 808.0,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 1473.0,
+                "y": 878.1,
+                "conf": 0.992
+              },
+              "right_knee": {
+                "x": 971.5,
+                "y": 935.0,
+                "conf": 0.996
+              },
+              "left_ankle": {
+                "x": 1580.6,
+                "y": 1081.3,
+                "conf": 0.937
+              },
+              "right_ankle": {
+                "x": 743.7,
+                "y": 1163.0,
+                "conf": 0.954
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.894105076789856
+        ],
+        "mean_box_conf": 0.8941,
+        "speed_ms": {
+          "preprocess": 1.97,
+          "inference": 17.59,
+          "postprocess": 7.97,
+          "total": 27.53
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.8518,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 615.0,
+                "y": 375.6,
+                "conf": 0.971
+              },
+              "left_eye": {
+                "x": 610.2,
+                "y": 364.5,
+                "conf": 0.788
+              },
+              "right_eye": {
+                "x": 591.1,
+                "y": 373.6,
+                "conf": 0.954
+              },
+              "left_ear": {
+                "x": 606.4,
+                "y": 395.0,
+                "conf": 0.223
+              },
+              "right_ear": {
+                "x": 560.5,
+                "y": 417.2,
+                "conf": 0.849
+              },
+              "left_shoulder": {
+                "x": 641.4,
+                "y": 487.8,
+                "conf": 0.967
+              },
+              "right_shoulder": {
+                "x": 621.4,
+                "y": 504.5,
+                "conf": 0.988
+              },
+              "left_elbow": {
+                "x": 782.6,
+                "y": 417.7,
+                "conf": 0.864
+              },
+              "right_elbow": {
+                "x": 754.2,
+                "y": 423.8,
+                "conf": 0.979
+              },
+              "left_wrist": {
+                "x": 894.1,
+                "y": 286.4,
+                "conf": 0.859
+              },
+              "right_wrist": {
+                "x": 842.0,
+                "y": 293.9,
+                "conf": 0.97
+              },
+              "left_hip": {
+                "x": 796.5,
+                "y": 650.4,
+                "conf": 0.908
+              },
+              "right_hip": {
+                "x": 782.3,
+                "y": 676.4,
+                "conf": 0.95
+              },
+              "left_knee": {
+                "x": 915.1,
+                "y": 457.7,
+                "conf": 0.77
+              },
+              "right_knee": {
+                "x": 905.4,
+                "y": 478.3,
+                "conf": 0.884
+              },
+              "left_ankle": {
+                "x": 989.3,
+                "y": 479.9,
+                "conf": 0.73
+              },
+              "right_ankle": {
+                "x": 1000.5,
+                "y": 486.3,
+                "conf": 0.826
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9216107726097107
+        ],
+        "mean_box_conf": 0.9216,
+        "speed_ms": {
+          "preprocess": 1.05,
+          "inference": 6.83,
+          "postprocess": 4.28,
+          "total": 12.17
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9697,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 214.1,
+                "y": 73.7,
+                "conf": 0.995
+              },
+              "left_eye": {
+                "x": 223.1,
+                "y": 62.9,
+                "conf": 0.976
+              },
+              "right_eye": {
+                "x": 202.6,
+                "y": 65.0,
+                "conf": 0.98
+              },
+              "left_ear": {
+                "x": 236.6,
+                "y": 70.1,
+                "conf": 0.787
+              },
+              "right_ear": {
+                "x": 186.4,
+                "y": 75.6,
+                "conf": 0.824
+              },
+              "left_shoulder": {
+                "x": 259.0,
+                "y": 140.0,
+                "conf": 0.997
+              },
+              "right_shoulder": {
+                "x": 168.2,
+                "y": 145.1,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 283.7,
+                "y": 227.8,
+                "conf": 0.988
+              },
+              "right_elbow": {
+                "x": 144.9,
+                "y": 232.2,
+                "conf": 0.994
+              },
+              "left_wrist": {
+                "x": 281.0,
+                "y": 307.1,
+                "conf": 0.985
+              },
+              "right_wrist": {
+                "x": 140.2,
+                "y": 307.8,
+                "conf": 0.991
+              },
+              "left_hip": {
+                "x": 240.1,
+                "y": 301.4,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 181.2,
+                "y": 302.6,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 237.6,
+                "y": 421.1,
+                "conf": 0.999
+              },
+              "right_knee": {
+                "x": 175.9,
+                "y": 423.4,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 237.5,
+                "y": 531.1,
+                "conf": 0.984
+              },
+              "right_ankle": {
+                "x": 171.4,
+                "y": 534.2,
+                "conf": 0.988
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.8896706104278564
+        ],
+        "mean_box_conf": 0.8897,
+        "speed_ms": {
+          "preprocess": 1.44,
+          "inference": 7.37,
+          "postprocess": 4.94,
+          "total": 13.75
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9031,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 646.4,
+                "y": 191.1,
+                "conf": 0.986
+              },
+              "left_eye": {
+                "x": 668.7,
+                "y": 175.0,
+                "conf": 0.986
+              },
+              "right_eye": {
+                "x": 651.2,
+                "y": 172.7,
+                "conf": 0.819
+              },
+              "left_ear": {
+                "x": 729.4,
+                "y": 198.8,
+                "conf": 0.958
+              },
+              "right_ear": {
+                "x": 676.1,
+                "y": 191.4,
+                "conf": 0.1
+              },
+              "left_shoulder": {
+                "x": 805.8,
+                "y": 298.1,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 622.7,
+                "y": 284.3,
+                "conf": 0.965
+              },
+              "left_elbow": {
+                "x": 941.3,
+                "y": 287.5,
+                "conf": 0.998
+              },
+              "right_elbow": {
+                "x": 475.4,
+                "y": 268.7,
+                "conf": 0.888
+              },
+              "left_wrist": {
+                "x": 1091.4,
+                "y": 270.3,
+                "conf": 0.99
+              },
+              "right_wrist": {
+                "x": 321.6,
+                "y": 290.6,
+                "conf": 0.782
+              },
+              "left_hip": {
+                "x": 761.8,
+                "y": 590.2,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 611.9,
+                "y": 576.8,
+                "conf": 0.998
+              },
+              "left_knee": {
+                "x": 925.1,
+                "y": 701.1,
+                "conf": 0.998
+              },
+              "right_knee": {
+                "x": 462.3,
+                "y": 661.5,
+                "conf": 0.989
+              },
+              "left_ankle": {
+                "x": 1099.1,
+                "y": 896.0,
+                "conf": 0.97
+              },
+              "right_ankle": {
+                "x": 388.2,
+                "y": 847.1,
+                "conf": 0.927
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 15.79,
+      "fps": 63.3,
+      "mean_person_confidence": 0.9016,
+      "mean_keypoint_confidence": 0.9114
+    }
+  },
+  "yolov8s-pose": {
+    "metadata": {
+      "name": "yolov8s-pose",
+      "task": "pose",
+      "gen": "YOLOv8",
+      "scale": "Small"
+    },
+    "params_m": 11.63,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9182274341583252
+        ],
+        "mean_box_conf": 0.9182,
+        "speed_ms": {
+          "preprocess": 1.42,
+          "inference": 25.7,
+          "postprocess": 35.13,
+          "total": 62.25
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.897,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1270.8,
+                "y": 389.6,
+                "conf": 0.967
+              },
+              "left_eye": {
+                "x": 1272.3,
+                "y": 369.5,
+                "conf": 0.662
+              },
+              "right_eye": {
+                "x": 1253.0,
+                "y": 377.1,
+                "conf": 0.96
+              },
+              "left_ear": {
+                "x": 1264.7,
+                "y": 380.6,
+                "conf": 0.124
+              },
+              "right_ear": {
+                "x": 1188.3,
+                "y": 394.7,
+                "conf": 0.916
+              },
+              "left_shoulder": {
+                "x": 1272.6,
+                "y": 480.3,
+                "conf": 0.976
+              },
+              "right_shoulder": {
+                "x": 1119.5,
+                "y": 501.5,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 1432.4,
+                "y": 502.1,
+                "conf": 0.946
+              },
+              "right_elbow": {
+                "x": 948.9,
+                "y": 501.7,
+                "conf": 0.999
+              },
+              "left_wrist": {
+                "x": 1616.9,
+                "y": 489.6,
+                "conf": 0.935
+              },
+              "right_wrist": {
+                "x": 786.3,
+                "y": 509.5,
+                "conf": 0.998
+              },
+              "left_hip": {
+                "x": 1304.6,
+                "y": 752.6,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 1163.9,
+                "y": 778.7,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 1491.1,
+                "y": 850.8,
+                "conf": 0.983
+              },
+              "right_knee": {
+                "x": 1002.3,
+                "y": 953.9,
+                "conf": 0.996
+              },
+              "left_ankle": {
+                "x": 1545.0,
+                "y": 1074.4,
+                "conf": 0.856
+              },
+              "right_ankle": {
+                "x": 763.8,
+                "y": 1103.4,
+                "conf": 0.934
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9308452606201172
+        ],
+        "mean_box_conf": 0.9308,
+        "speed_ms": {
+          "preprocess": 1.21,
+          "inference": 30.94,
+          "postprocess": 5.69,
+          "total": 37.85
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.844,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 612.0,
+                "y": 371.5,
+                "conf": 0.891
+              },
+              "left_eye": {
+                "x": 607.1,
+                "y": 360.4,
+                "conf": 0.544
+              },
+              "right_eye": {
+                "x": 587.5,
+                "y": 372.0,
+                "conf": 0.854
+              },
+              "left_ear": {
+                "x": 604.2,
+                "y": 402.4,
+                "conf": 0.234
+              },
+              "right_ear": {
+                "x": 563.2,
+                "y": 430.0,
+                "conf": 0.806
+              },
+              "left_shoulder": {
+                "x": 641.2,
+                "y": 491.9,
+                "conf": 0.96
+              },
+              "right_shoulder": {
+                "x": 624.3,
+                "y": 514.6,
+                "conf": 0.991
+              },
+              "left_elbow": {
+                "x": 790.8,
+                "y": 416.9,
+                "conf": 0.833
+              },
+              "right_elbow": {
+                "x": 744.1,
+                "y": 428.5,
+                "conf": 0.988
+              },
+              "left_wrist": {
+                "x": 887.0,
+                "y": 289.4,
+                "conf": 0.863
+              },
+              "right_wrist": {
+                "x": 901.9,
+                "y": 295.5,
+                "conf": 0.987
+              },
+              "left_hip": {
+                "x": 787.2,
+                "y": 649.9,
+                "conf": 0.962
+              },
+              "right_hip": {
+                "x": 772.3,
+                "y": 675.7,
+                "conf": 0.985
+              },
+              "left_knee": {
+                "x": 909.7,
+                "y": 434.9,
+                "conf": 0.839
+              },
+              "right_knee": {
+                "x": 897.7,
+                "y": 450.2,
+                "conf": 0.938
+              },
+              "left_ankle": {
+                "x": 1001.1,
+                "y": 444.4,
+                "conf": 0.779
+              },
+              "right_ankle": {
+                "x": 982.7,
+                "y": 406.9,
+                "conf": 0.893
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.921096682548523
+        ],
+        "mean_box_conf": 0.9211,
+        "speed_ms": {
+          "preprocess": 1.09,
+          "inference": 14.06,
+          "postprocess": 10.98,
+          "total": 26.13
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9771,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 214.1,
+                "y": 72.2,
+                "conf": 0.997
+              },
+              "left_eye": {
+                "x": 224.6,
+                "y": 63.1,
+                "conf": 0.984
+              },
+              "right_eye": {
+                "x": 202.6,
+                "y": 62.4,
+                "conf": 0.986
+              },
+              "left_ear": {
+                "x": 236.4,
+                "y": 73.8,
+                "conf": 0.792
+              },
+              "right_ear": {
+                "x": 184.8,
+                "y": 73.8,
+                "conf": 0.892
+              },
+              "left_shoulder": {
+                "x": 256.0,
+                "y": 142.8,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 164.9,
+                "y": 142.4,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 283.2,
+                "y": 228.9,
+                "conf": 0.995
+              },
+              "right_elbow": {
+                "x": 143.4,
+                "y": 231.4,
+                "conf": 0.994
+              },
+              "left_wrist": {
+                "x": 282.4,
+                "y": 308.9,
+                "conf": 0.993
+              },
+              "right_wrist": {
+                "x": 140.5,
+                "y": 311.8,
+                "conf": 0.992
+              },
+              "left_hip": {
+                "x": 242.3,
+                "y": 305.5,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 181.8,
+                "y": 304.5,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 239.3,
+                "y": 421.6,
+                "conf": 1.0
+              },
+              "right_knee": {
+                "x": 176.2,
+                "y": 422.0,
+                "conf": 1.0
+              },
+              "left_ankle": {
+                "x": 242.5,
+                "y": 534.0,
+                "conf": 0.995
+              },
+              "right_ankle": {
+                "x": 165.9,
+                "y": 539.0,
+                "conf": 0.994
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.8906530737876892
+        ],
+        "mean_box_conf": 0.8907,
+        "speed_ms": {
+          "preprocess": 1.62,
+          "inference": 19.72,
+          "postprocess": 12.19,
+          "total": 33.52
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9235,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 651.6,
+                "y": 199.6,
+                "conf": 0.991
+              },
+              "left_eye": {
+                "x": 671.8,
+                "y": 179.6,
+                "conf": 0.991
+              },
+              "right_eye": {
+                "x": 648.4,
+                "y": 172.6,
+                "conf": 0.841
+              },
+              "left_ear": {
+                "x": 730.5,
+                "y": 202.1,
+                "conf": 0.96
+              },
+              "right_ear": {
+                "x": 658.6,
+                "y": 188.0,
+                "conf": 0.146
+              },
+              "left_shoulder": {
+                "x": 794.6,
+                "y": 303.1,
+                "conf": 0.998
+              },
+              "right_shoulder": {
+                "x": 632.0,
+                "y": 286.9,
+                "conf": 0.989
+              },
+              "left_elbow": {
+                "x": 954.4,
+                "y": 291.3,
+                "conf": 0.997
+              },
+              "right_elbow": {
+                "x": 466.9,
+                "y": 293.8,
+                "conf": 0.95
+              },
+              "left_wrist": {
+                "x": 1119.8,
+                "y": 279.1,
+                "conf": 0.99
+              },
+              "right_wrist": {
+                "x": 315.8,
+                "y": 286.7,
+                "conf": 0.908
+              },
+              "left_hip": {
+                "x": 755.6,
+                "y": 598.6,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 616.3,
+                "y": 582.7,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 902.4,
+                "y": 710.0,
+                "conf": 0.998
+              },
+              "right_knee": {
+                "x": 465.6,
+                "y": 662.2,
+                "conf": 0.996
+              },
+              "left_ankle": {
+                "x": 1101.3,
+                "y": 893.6,
+                "conf": 0.981
+              },
+              "right_ankle": {
+                "x": 386.7,
+                "y": 882.3,
+                "conf": 0.964
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 39.94,
+      "fps": 25.0,
+      "mean_person_confidence": 0.9152,
+      "mean_keypoint_confidence": 0.9104
+    }
+  },
+  "yolov8m-pose": {
+    "metadata": {
+      "name": "yolov8m-pose",
+      "task": "pose",
+      "gen": "YOLOv8",
+      "scale": "Medium"
+    },
+    "params_m": 26.46,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9458397030830383
+        ],
+        "mean_box_conf": 0.9458,
+        "speed_ms": {
+          "preprocess": 1.73,
+          "inference": 24.69,
+          "postprocess": 14.84,
+          "total": 41.27
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9054,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1275.0,
+                "y": 388.7,
+                "conf": 0.972
+              },
+              "left_eye": {
+                "x": 1276.3,
+                "y": 364.7,
+                "conf": 0.781
+              },
+              "right_eye": {
+                "x": 1249.4,
+                "y": 371.5,
+                "conf": 0.956
+              },
+              "left_ear": {
+                "x": 1266.6,
+                "y": 379.4,
+                "conf": 0.229
+              },
+              "right_ear": {
+                "x": 1188.5,
+                "y": 393.5,
+                "conf": 0.88
+              },
+              "left_shoulder": {
+                "x": 1306.9,
+                "y": 497.7,
+                "conf": 0.972
+              },
+              "right_shoulder": {
+                "x": 1103.9,
+                "y": 497.0,
+                "conf": 0.998
+              },
+              "left_elbow": {
+                "x": 1469.5,
+                "y": 507.6,
+                "conf": 0.913
+              },
+              "right_elbow": {
+                "x": 931.2,
+                "y": 505.4,
+                "conf": 0.998
+              },
+              "left_wrist": {
+                "x": 1614.6,
+                "y": 475.4,
+                "conf": 0.91
+              },
+              "right_wrist": {
+                "x": 770.7,
+                "y": 506.7,
+                "conf": 0.995
+              },
+              "left_hip": {
+                "x": 1302.5,
+                "y": 788.5,
+                "conf": 0.996
+              },
+              "right_hip": {
+                "x": 1141.8,
+                "y": 796.6,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 1500.2,
+                "y": 880.3,
+                "conf": 0.978
+              },
+              "right_knee": {
+                "x": 975.1,
+                "y": 938.0,
+                "conf": 0.994
+              },
+              "left_ankle": {
+                "x": 1541.1,
+                "y": 1101.6,
+                "conf": 0.878
+              },
+              "right_ankle": {
+                "x": 785.6,
+                "y": 1148.1,
+                "conf": 0.942
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9348090291023254
+        ],
+        "mean_box_conf": 0.9348,
+        "speed_ms": {
+          "preprocess": 1.28,
+          "inference": 29.55,
+          "postprocess": 15.85,
+          "total": 46.68
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.7455,
+            "visible_keypoints_over_50": 14,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 613.2,
+                "y": 366.2,
+                "conf": 0.772
+              },
+              "left_eye": {
+                "x": 600.4,
+                "y": 360.8,
+                "conf": 0.209
+              },
+              "right_eye": {
+                "x": 590.6,
+                "y": 369.0,
+                "conf": 0.766
+              },
+              "left_ear": {
+                "x": 586.0,
+                "y": 400.2,
+                "conf": 0.112
+              },
+              "right_ear": {
+                "x": 567.4,
+                "y": 421.5,
+                "conf": 0.852
+              },
+              "left_shoulder": {
+                "x": 631.2,
+                "y": 517.7,
+                "conf": 0.941
+              },
+              "right_shoulder": {
+                "x": 621.7,
+                "y": 504.1,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 763.6,
+                "y": 416.9,
+                "conf": 0.695
+              },
+              "right_elbow": {
+                "x": 766.1,
+                "y": 399.1,
+                "conf": 0.999
+              },
+              "left_wrist": {
+                "x": 865.8,
+                "y": 273.1,
+                "conf": 0.693
+              },
+              "right_wrist": {
+                "x": 884.6,
+                "y": 265.8,
+                "conf": 0.996
+              },
+              "left_hip": {
+                "x": 780.7,
+                "y": 694.8,
+                "conf": 0.959
+              },
+              "right_hip": {
+                "x": 771.9,
+                "y": 702.7,
+                "conf": 0.996
+              },
+              "left_knee": {
+                "x": 902.5,
+                "y": 473.6,
+                "conf": 0.531
+              },
+              "right_knee": {
+                "x": 911.3,
+                "y": 455.9,
+                "conf": 0.923
+              },
+              "left_ankle": {
+                "x": 983.3,
+                "y": 414.5,
+                "conf": 0.438
+              },
+              "right_ankle": {
+                "x": 1030.1,
+                "y": 375.2,
+                "conf": 0.791
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9358066320419312
+        ],
+        "mean_box_conf": 0.9358,
+        "speed_ms": {
+          "preprocess": 1.27,
+          "inference": 32.56,
+          "postprocess": 17.48,
+          "total": 51.31
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9788,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 212.2,
+                "y": 71.6,
+                "conf": 0.998
+              },
+              "left_eye": {
+                "x": 222.7,
+                "y": 61.1,
+                "conf": 0.988
+              },
+              "right_eye": {
+                "x": 201.8,
+                "y": 61.6,
+                "conf": 0.988
+              },
+              "left_ear": {
+                "x": 236.8,
+                "y": 71.4,
+                "conf": 0.869
+              },
+              "right_ear": {
+                "x": 185.7,
+                "y": 72.5,
+                "conf": 0.877
+              },
+              "left_shoulder": {
+                "x": 257.6,
+                "y": 143.8,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 168.4,
+                "y": 146.0,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 284.7,
+                "y": 231.0,
+                "conf": 0.995
+              },
+              "right_elbow": {
+                "x": 144.6,
+                "y": 230.6,
+                "conf": 0.996
+              },
+              "left_wrist": {
+                "x": 284.6,
+                "y": 307.7,
+                "conf": 0.991
+              },
+              "right_wrist": {
+                "x": 139.7,
+                "y": 309.8,
+                "conf": 0.991
+              },
+              "left_hip": {
+                "x": 242.8,
+                "y": 304.3,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 184.2,
+                "y": 305.1,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 241.8,
+                "y": 420.0,
+                "conf": 0.999
+              },
+              "right_knee": {
+                "x": 174.7,
+                "y": 424.8,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 239.4,
+                "y": 540.0,
+                "conf": 0.975
+              },
+              "right_ankle": {
+                "x": 165.4,
+                "y": 546.3,
+                "conf": 0.976
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9209105968475342
+        ],
+        "mean_box_conf": 0.9209,
+        "speed_ms": {
+          "preprocess": 1.43,
+          "inference": 30.41,
+          "postprocess": 15.8,
+          "total": 47.64
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.8895,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 652.0,
+                "y": 195.3,
+                "conf": 0.96
+              },
+              "left_eye": {
+                "x": 670.4,
+                "y": 178.5,
+                "conf": 0.935
+              },
+              "right_eye": {
+                "x": 651.8,
+                "y": 174.4,
+                "conf": 0.566
+              },
+              "left_ear": {
+                "x": 725.4,
+                "y": 196.4,
+                "conf": 0.859
+              },
+              "right_ear": {
+                "x": 664.9,
+                "y": 184.9,
+                "conf": 0.07
+              },
+              "left_shoulder": {
+                "x": 800.0,
+                "y": 301.3,
+                "conf": 0.997
+              },
+              "right_shoulder": {
+                "x": 620.8,
+                "y": 283.2,
+                "conf": 0.975
+              },
+              "left_elbow": {
+                "x": 953.8,
+                "y": 293.1,
+                "conf": 0.998
+              },
+              "right_elbow": {
+                "x": 470.7,
+                "y": 284.8,
+                "conf": 0.951
+              },
+              "left_wrist": {
+                "x": 1105.5,
+                "y": 285.1,
+                "conf": 0.995
+              },
+              "right_wrist": {
+                "x": 313.6,
+                "y": 266.3,
+                "conf": 0.932
+              },
+              "left_hip": {
+                "x": 767.8,
+                "y": 575.5,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 616.8,
+                "y": 561.5,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 918.7,
+                "y": 710.9,
+                "conf": 0.998
+              },
+              "right_knee": {
+                "x": 435.1,
+                "y": 673.0,
+                "conf": 0.992
+              },
+              "left_ankle": {
+                "x": 1100.1,
+                "y": 896.3,
+                "conf": 0.963
+              },
+              "right_ankle": {
+                "x": 393.9,
+                "y": 862.2,
+                "conf": 0.931
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 46.72,
+      "fps": 21.4,
+      "mean_person_confidence": 0.9343,
+      "mean_keypoint_confidence": 0.8798
+    }
+  },
+  "yolov8l-pose": {
+    "metadata": {
+      "name": "yolov8l-pose",
+      "task": "pose",
+      "gen": "YOLOv8",
+      "scale": "Large"
+    },
+    "params_m": 44.49,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9292269349098206
+        ],
+        "mean_box_conf": 0.9292,
+        "speed_ms": {
+          "preprocess": 1.44,
+          "inference": 37.23,
+          "postprocess": 18.7,
+          "total": 57.37
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9058,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 1275.1,
+                "y": 386.3,
+                "conf": 0.964
+              },
+              "left_eye": {
+                "x": 1272.7,
+                "y": 367.8,
+                "conf": 0.716
+              },
+              "right_eye": {
+                "x": 1254.0,
+                "y": 369.7,
+                "conf": 0.952
+              },
+              "left_ear": {
+                "x": 1259.2,
+                "y": 384.4,
+                "conf": 0.178
+              },
+              "right_ear": {
+                "x": 1194.1,
+                "y": 393.1,
+                "conf": 0.918
+              },
+              "left_shoulder": {
+                "x": 1302.1,
+                "y": 486.0,
+                "conf": 0.99
+              },
+              "right_shoulder": {
+                "x": 1114.2,
+                "y": 508.3,
+                "conf": 0.998
+              },
+              "left_elbow": {
+                "x": 1478.2,
+                "y": 512.8,
+                "conf": 0.961
+              },
+              "right_elbow": {
+                "x": 932.9,
+                "y": 512.7,
+                "conf": 0.997
+              },
+              "left_wrist": {
+                "x": 1624.2,
+                "y": 477.1,
+                "conf": 0.912
+              },
+              "right_wrist": {
+                "x": 767.8,
+                "y": 518.2,
+                "conf": 0.989
+              },
+              "left_hip": {
+                "x": 1299.0,
+                "y": 775.2,
+                "conf": 0.999
+              },
+              "right_hip": {
+                "x": 1134.8,
+                "y": 791.2,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 1509.2,
+                "y": 854.3,
+                "conf": 0.986
+              },
+              "right_knee": {
+                "x": 986.9,
+                "y": 937.1,
+                "conf": 0.994
+              },
+              "left_ankle": {
+                "x": 1543.3,
+                "y": 1093.6,
+                "conf": 0.907
+              },
+              "right_ankle": {
+                "x": 775.2,
+                "y": 1111.1,
+                "conf": 0.938
+              }
+            }
+          }
+        ]
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9412267208099365
+        ],
+        "mean_box_conf": 0.9412,
+        "speed_ms": {
+          "preprocess": 1.67,
+          "inference": 37.74,
+          "postprocess": 121.59,
+          "total": 161.0
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.7993,
+            "visible_keypoints_over_50": 15,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 617.4,
+                "y": 375.8,
+                "conf": 0.765
+              },
+              "left_eye": {
+                "x": 604.8,
+                "y": 363.8,
+                "conf": 0.331
+              },
+              "right_eye": {
+                "x": 594.2,
+                "y": 377.5,
+                "conf": 0.707
+              },
+              "left_ear": {
+                "x": 588.2,
+                "y": 399.8,
+                "conf": 0.244
+              },
+              "right_ear": {
+                "x": 572.6,
+                "y": 429.1,
+                "conf": 0.776
+              },
+              "left_shoulder": {
+                "x": 622.1,
+                "y": 504.1,
+                "conf": 0.971
+              },
+              "right_shoulder": {
+                "x": 625.9,
+                "y": 496.9,
+                "conf": 0.996
+              },
+              "left_elbow": {
+                "x": 769.2,
+                "y": 423.5,
+                "conf": 0.823
+              },
+              "right_elbow": {
+                "x": 760.3,
+                "y": 407.9,
+                "conf": 0.991
+              },
+              "left_wrist": {
+                "x": 863.2,
+                "y": 281.4,
+                "conf": 0.697
+              },
+              "right_wrist": {
+                "x": 883.0,
+                "y": 289.0,
+                "conf": 0.974
+              },
+              "left_hip": {
+                "x": 798.9,
+                "y": 666.0,
+                "conf": 0.975
+              },
+              "right_hip": {
+                "x": 797.2,
+                "y": 674.5,
+                "conf": 0.993
+              },
+              "left_knee": {
+                "x": 894.6,
+                "y": 481.8,
+                "conf": 0.813
+              },
+              "right_knee": {
+                "x": 920.7,
+                "y": 473.0,
+                "conf": 0.938
+              },
+              "left_ankle": {
+                "x": 976.3,
+                "y": 353.3,
+                "conf": 0.732
+              },
+              "right_ankle": {
+                "x": 1028.1,
+                "y": 328.8,
+                "conf": 0.862
+              }
+            }
+          }
+        ]
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9354057908058167
+        ],
+        "mean_box_conf": 0.9354,
+        "speed_ms": {
+          "preprocess": 1.27,
+          "inference": 56.33,
+          "postprocess": 26.4,
+          "total": 84.0
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9774,
+            "visible_keypoints_over_50": 17,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 212.8,
+                "y": 70.3,
+                "conf": 0.997
+              },
+              "left_eye": {
+                "x": 222.3,
+                "y": 61.2,
+                "conf": 0.983
+              },
+              "right_eye": {
+                "x": 202.8,
+                "y": 61.5,
+                "conf": 0.99
+              },
+              "left_ear": {
+                "x": 236.6,
+                "y": 72.2,
+                "conf": 0.816
+              },
+              "right_ear": {
+                "x": 186.6,
+                "y": 73.7,
+                "conf": 0.929
+              },
+              "left_shoulder": {
+                "x": 261.2,
+                "y": 146.1,
+                "conf": 0.999
+              },
+              "right_shoulder": {
+                "x": 165.3,
+                "y": 147.8,
+                "conf": 0.999
+              },
+              "left_elbow": {
+                "x": 284.4,
+                "y": 231.8,
+                "conf": 0.992
+              },
+              "right_elbow": {
+                "x": 145.7,
+                "y": 231.4,
+                "conf": 0.996
+              },
+              "left_wrist": {
+                "x": 283.1,
+                "y": 306.5,
+                "conf": 0.983
+              },
+              "right_wrist": {
+                "x": 140.6,
+                "y": 311.6,
+                "conf": 0.989
+              },
+              "left_hip": {
+                "x": 244.2,
+                "y": 308.6,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 180.6,
+                "y": 307.9,
+                "conf": 1.0
+              },
+              "left_knee": {
+                "x": 237.1,
+                "y": 421.9,
+                "conf": 0.999
+              },
+              "right_knee": {
+                "x": 178.3,
+                "y": 420.1,
+                "conf": 0.999
+              },
+              "left_ankle": {
+                "x": 239.8,
+                "y": 538.9,
+                "conf": 0.971
+              },
+              "right_ankle": {
+                "x": 159.9,
+                "y": 536.4,
+                "conf": 0.975
+              }
+            }
+          }
+        ]
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9418267607688904
+        ],
+        "mean_box_conf": 0.9418,
+        "speed_ms": {
+          "preprocess": 1.57,
+          "inference": 40.61,
+          "postprocess": 22.29,
+          "total": 64.47
+        },
+        "pose_details": [
+          {
+            "person_index": 1,
+            "mean_kp_conf": 0.9019,
+            "visible_keypoints_over_50": 16,
+            "total_keypoints": 17,
+            "keypoints": {
+              "nose": {
+                "x": 652.5,
+                "y": 196.3,
+                "conf": 0.971
+              },
+              "left_eye": {
+                "x": 673.4,
+                "y": 176.0,
+                "conf": 0.97
+              },
+              "right_eye": {
+                "x": 649.9,
+                "y": 176.7,
+                "conf": 0.777
+              },
+              "left_ear": {
+                "x": 731.3,
+                "y": 185.1,
+                "conf": 0.922
+              },
+              "right_ear": {
+                "x": 659.0,
+                "y": 184.6,
+                "conf": 0.158
+              },
+              "left_shoulder": {
+                "x": 799.8,
+                "y": 299.4,
+                "conf": 0.997
+              },
+              "right_shoulder": {
+                "x": 632.9,
+                "y": 294.1,
+                "conf": 0.973
+              },
+              "left_elbow": {
+                "x": 957.5,
+                "y": 284.8,
+                "conf": 0.993
+              },
+              "right_elbow": {
+                "x": 468.7,
+                "y": 295.2,
+                "conf": 0.9
+              },
+              "left_wrist": {
+                "x": 1094.8,
+                "y": 275.2,
+                "conf": 0.977
+              },
+              "right_wrist": {
+                "x": 327.7,
+                "y": 268.9,
+                "conf": 0.821
+              },
+              "left_hip": {
+                "x": 761.7,
+                "y": 601.3,
+                "conf": 1.0
+              },
+              "right_hip": {
+                "x": 622.2,
+                "y": 590.6,
+                "conf": 0.999
+              },
+              "left_knee": {
+                "x": 901.6,
+                "y": 712.3,
+                "conf": 0.997
+              },
+              "right_knee": {
+                "x": 440.7,
+                "y": 658.6,
+                "conf": 0.99
+              },
+              "left_ankle": {
+                "x": 1026.0,
+                "y": 878.3,
+                "conf": 0.958
+              },
+              "right_ankle": {
+                "x": 421.0,
+                "y": 889.3,
+                "conf": 0.93
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 91.71,
+      "fps": 10.9,
+      "mean_person_confidence": 0.9369,
+      "mean_keypoint_confidence": 0.8961
+    }
+  },
+  "yolo11n": {
+    "metadata": {
+      "name": "yolo11n",
+      "task": "detect",
+      "gen": "YOLO11",
+      "scale": "Nano"
+    },
+    "params_m": 2.62,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9335585236549377
+        ],
+        "mean_box_conf": 0.9336,
+        "speed_ms": {
+          "preprocess": 1.45,
+          "inference": 13.66,
+          "postprocess": 9.59,
+          "total": 24.7
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.9053780436515808,
+          0.5817357301712036
+        ],
+        "mean_box_conf": 0.7436,
+        "speed_ms": {
+          "preprocess": 3.79,
+          "inference": 15.17,
+          "postprocess": 9.95,
+          "total": 28.92
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9133367538452148
+        ],
+        "mean_box_conf": 0.9133,
+        "speed_ms": {
+          "preprocess": 1.66,
+          "inference": 15.27,
+          "postprocess": 8.76,
+          "total": 25.69
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9178345799446106
+        ],
+        "mean_box_conf": 0.9178,
+        "speed_ms": {
+          "preprocess": 1.42,
+          "inference": 14.74,
+          "postprocess": 8.7,
+          "total": 24.86
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 26.04,
+      "fps": 38.4,
+      "mean_person_confidence": 0.8504,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolo11m": {
+    "metadata": {
+      "name": "yolo11m",
+      "task": "detect",
+      "gen": "YOLO11",
+      "scale": "Medium"
+    },
+    "params_m": 20.11,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9535608291625977
+        ],
+        "mean_box_conf": 0.9536,
+        "speed_ms": {
+          "preprocess": 1.46,
+          "inference": 29.01,
+          "postprocess": 12.53,
+          "total": 43.01
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.9359565377235413,
+          0.7475844621658325
+        ],
+        "mean_box_conf": 0.8418,
+        "speed_ms": {
+          "preprocess": 1.56,
+          "inference": 39.54,
+          "postprocess": 15.7,
+          "total": 56.8
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9333285689353943
+        ],
+        "mean_box_conf": 0.9333,
+        "speed_ms": {
+          "preprocess": 1.08,
+          "inference": 45.38,
+          "postprocess": 18.83,
+          "total": 65.29
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9429667592048645
+        ],
+        "mean_box_conf": 0.943,
+        "speed_ms": {
+          "preprocess": 2.0,
+          "inference": 43.8,
+          "postprocess": 17.83,
+          "total": 63.63
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 57.18,
+      "fps": 17.5,
+      "mean_person_confidence": 0.9027,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolo11x": {
+    "metadata": {
+      "name": "yolo11x",
+      "task": "detect",
+      "gen": "YOLO11",
+      "scale": "XLarge"
+    },
+    "params_m": 56.97,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9491564631462097
+        ],
+        "mean_box_conf": 0.9492,
+        "speed_ms": {
+          "preprocess": 2.08,
+          "inference": 55.69,
+          "postprocess": 21.07,
+          "total": 78.84
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9473569393157959
+        ],
+        "mean_box_conf": 0.9474,
+        "speed_ms": {
+          "preprocess": 1.49,
+          "inference": 61.1,
+          "postprocess": 23.72,
+          "total": 86.31
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9467790126800537
+        ],
+        "mean_box_conf": 0.9468,
+        "speed_ms": {
+          "preprocess": 1.25,
+          "inference": 66.76,
+          "postprocess": 24.95,
+          "total": 92.96
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9596105217933655
+        ],
+        "mean_box_conf": 0.9596,
+        "speed_ms": {
+          "preprocess": 1.84,
+          "inference": 72.45,
+          "postprocess": 22.14,
+          "total": 96.43
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 88.64,
+      "fps": 11.3,
+      "mean_person_confidence": 0.9507,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolov8n": {
+    "metadata": {
+      "name": "yolov8n",
+      "task": "detect",
+      "gen": "YOLOv8",
+      "scale": "Nano"
+    },
+    "params_m": 3.16,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9384755492210388
+        ],
+        "mean_box_conf": 0.9385,
+        "speed_ms": {
+          "preprocess": 6.57,
+          "inference": 5.62,
+          "postprocess": 19.44,
+          "total": 31.62
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9345064163208008
+        ],
+        "mean_box_conf": 0.9345,
+        "speed_ms": {
+          "preprocess": 1.56,
+          "inference": 10.1,
+          "postprocess": 4.53,
+          "total": 16.19
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.897150456905365
+        ],
+        "mean_box_conf": 0.8972,
+        "speed_ms": {
+          "preprocess": 1.48,
+          "inference": 12.28,
+          "postprocess": 11.45,
+          "total": 25.21
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9184111952781677
+        ],
+        "mean_box_conf": 0.9184,
+        "speed_ms": {
+          "preprocess": 2.17,
+          "inference": 14.08,
+          "postprocess": 10.52,
+          "total": 26.77
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 24.95,
+      "fps": 40.1,
+      "mean_person_confidence": 0.9221,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolov8m": {
+    "metadata": {
+      "name": "yolov8m",
+      "task": "detect",
+      "gen": "YOLOv8",
+      "scale": "Medium"
+    },
+    "params_m": 25.9,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.958257794380188
+        ],
+        "mean_box_conf": 0.9583,
+        "speed_ms": {
+          "preprocess": 1.52,
+          "inference": 26.9,
+          "postprocess": 14.29,
+          "total": 42.71
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9617568850517273
+        ],
+        "mean_box_conf": 0.9618,
+        "speed_ms": {
+          "preprocess": 4.67,
+          "inference": 29.93,
+          "postprocess": 17.48,
+          "total": 52.08
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9393237233161926
+        ],
+        "mean_box_conf": 0.9393,
+        "speed_ms": {
+          "preprocess": 1.17,
+          "inference": 27.83,
+          "postprocess": 15.55,
+          "total": 44.55
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9598428606987
+        ],
+        "mean_box_conf": 0.9598,
+        "speed_ms": {
+          "preprocess": 2.0,
+          "inference": 24.55,
+          "postprocess": 13.73,
+          "total": 40.28
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 44.9,
+      "fps": 22.3,
+      "mean_person_confidence": 0.9548,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolov5nu": {
+    "metadata": {
+      "name": "yolov5nu",
+      "task": "detect",
+      "gen": "YOLOv5u",
+      "scale": "Nano"
+    },
+    "params_m": 2.65,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9253534078598022
+        ],
+        "mean_box_conf": 0.9254,
+        "speed_ms": {
+          "preprocess": 2.03,
+          "inference": 15.05,
+          "postprocess": 6.75,
+          "total": 23.83
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.8874915838241577,
+          0.25311532616615295
+        ],
+        "mean_box_conf": 0.5703,
+        "speed_ms": {
+          "preprocess": 1.57,
+          "inference": 14.06,
+          "postprocess": 11.15,
+          "total": 26.77
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.8905930519104004
+        ],
+        "mean_box_conf": 0.8906,
+        "speed_ms": {
+          "preprocess": 1.7,
+          "inference": 8.26,
+          "postprocess": 4.71,
+          "total": 14.67
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.913702666759491
+        ],
+        "mean_box_conf": 0.9137,
+        "speed_ms": {
+          "preprocess": 1.98,
+          "inference": 9.03,
+          "postprocess": 9.34,
+          "total": 20.35
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 21.4,
+      "fps": 46.7,
+      "mean_person_confidence": 0.7741,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolov5mu": {
+    "metadata": {
+      "name": "yolov5mu",
+      "task": "detect",
+      "gen": "YOLOv5u",
+      "scale": "Medium"
+    },
+    "params_m": 25.11,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9476234316825867
+        ],
+        "mean_box_conf": 0.9476,
+        "speed_ms": {
+          "preprocess": 1.46,
+          "inference": 25.8,
+          "postprocess": 13.18,
+          "total": 40.44
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9399561882019043
+        ],
+        "mean_box_conf": 0.94,
+        "speed_ms": {
+          "preprocess": 1.49,
+          "inference": 29.15,
+          "postprocess": 17.5,
+          "total": 48.14
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9032972455024719
+        ],
+        "mean_box_conf": 0.9033,
+        "speed_ms": {
+          "preprocess": 4.81,
+          "inference": 39.23,
+          "postprocess": 29.42,
+          "total": 73.46
+        }
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9117437601089478
+        ],
+        "mean_box_conf": 0.9117,
+        "speed_ms": {
+          "preprocess": 1.75,
+          "inference": 28.25,
+          "postprocess": 16.32,
+          "total": 46.33
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 52.09,
+      "fps": 19.2,
+      "mean_person_confidence": 0.9257,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "rtdetr-l": {
+    "metadata": {
+      "name": "rtdetr-l",
+      "task": "detect",
+      "gen": "RT-DETR",
+      "scale": "Large"
+    },
+    "params_m": 32.97,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9676195979118347
+        ],
+        "mean_box_conf": 0.9676,
+        "speed_ms": {
+          "preprocess": 9.01,
+          "inference": 68.65,
+          "postprocess": 14.37,
+          "total": 92.04
+        }
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.9687566161155701,
+          0.27609971165657043
+        ],
+        "mean_box_conf": 0.6224,
+        "speed_ms": {
+          "preprocess": 1.5,
+          "inference": 62.09,
+          "postprocess": 13.24,
+          "total": 76.83
+        }
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9671413898468018
+        ],
+        "mean_box_conf": 0.9671,
+        "speed_ms": {
+          "preprocess": 1.32,
+          "inference": 67.85,
+          "postprocess": 12.61,
+          "total": 81.78
+        }
+      },
+      "yoga.png": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.9678603410720825,
+          0.7001209259033203
+        ],
+        "mean_box_conf": 0.834,
+        "speed_ms": {
+          "preprocess": 2.66,
+          "inference": 68.54,
+          "postprocess": 16.18,
+          "total": 87.38
+        }
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 84.51,
+      "fps": 11.8,
+      "mean_person_confidence": 0.8079,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolo11n-seg": {
+    "metadata": {
+      "name": "yolo11n-seg",
+      "task": "segment",
+      "gen": "YOLO11",
+      "scale": "Nano"
+    },
+    "params_m": 2.88,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9134318232536316
+        ],
+        "mean_box_conf": 0.9134,
+        "speed_ms": {
+          "preprocess": 3.58,
+          "inference": 14.79,
+          "postprocess": 14.16,
+          "total": 32.53
+        },
+        "num_masks": 1
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.9007439017295837,
+          0.42040902376174927
+        ],
+        "mean_box_conf": 0.6606,
+        "speed_ms": {
+          "preprocess": 1.6,
+          "inference": 16.13,
+          "postprocess": 15.98,
+          "total": 33.71
+        },
+        "num_masks": 2
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9071314334869385
+        ],
+        "mean_box_conf": 0.9071,
+        "speed_ms": {
+          "preprocess": 1.72,
+          "inference": 17.0,
+          "postprocess": 26.15,
+          "total": 44.86
+        },
+        "num_masks": 1
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9284875988960266
+        ],
+        "mean_box_conf": 0.9285,
+        "speed_ms": {
+          "preprocess": 1.6,
+          "inference": 17.66,
+          "postprocess": 19.28,
+          "total": 38.54
+        },
+        "num_masks": 1
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 37.41,
+      "fps": 26.7,
+      "mean_person_confidence": 0.814,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolo11m-seg": {
+    "metadata": {
+      "name": "yolo11m-seg",
+      "task": "segment",
+      "gen": "YOLO11",
+      "scale": "Medium"
+    },
+    "params_m": 22.42,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9535608291625977
+        ],
+        "mean_box_conf": 0.9536,
+        "speed_ms": {
+          "preprocess": 2.54,
+          "inference": 44.77,
+          "postprocess": 21.02,
+          "total": 68.33
+        },
+        "num_masks": 1
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 2,
+        "box_confidences": [
+          0.9359565377235413,
+          0.7475844621658325
+        ],
+        "mean_box_conf": 0.8418,
+        "speed_ms": {
+          "preprocess": 3.36,
+          "inference": 44.17,
+          "postprocess": 27.35,
+          "total": 74.87
+        },
+        "num_masks": 2
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9333285689353943
+        ],
+        "mean_box_conf": 0.9333,
+        "speed_ms": {
+          "preprocess": 1.32,
+          "inference": 37.88,
+          "postprocess": 29.73,
+          "total": 68.93
+        },
+        "num_masks": 1
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9429667592048645
+        ],
+        "mean_box_conf": 0.943,
+        "speed_ms": {
+          "preprocess": 1.21,
+          "inference": 31.92,
+          "postprocess": 29.81,
+          "total": 62.93
+        },
+        "num_masks": 1
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 68.77,
+      "fps": 14.5,
+      "mean_person_confidence": 0.9027,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "yolov8n-seg": {
+    "metadata": {
+      "name": "yolov8n-seg",
+      "task": "segment",
+      "gen": "YOLOv8",
+      "scale": "Nano"
+    },
+    "params_m": 3.41,
+    "image_evaluations": {
+      "Warrior-Pose.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9001744985580444
+        ],
+        "mean_box_conf": 0.9002,
+        "speed_ms": {
+          "preprocess": 1.25,
+          "inference": 8.58,
+          "postprocess": 5.84,
+          "total": 15.67
+        },
+        "num_masks": 1
+      },
+      "WhatsApp Image 2026-08-14 at 21.34.19.jpeg": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9402703642845154
+        ],
+        "mean_box_conf": 0.9403,
+        "speed_ms": {
+          "preprocess": 1.32,
+          "inference": 9.55,
+          "postprocess": 17.11,
+          "total": 27.98
+        },
+        "num_masks": 1
+      },
+      "standing.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9237189888954163
+        ],
+        "mean_box_conf": 0.9237,
+        "speed_ms": {
+          "preprocess": 1.3,
+          "inference": 15.34,
+          "postprocess": 18.97,
+          "total": 35.61
+        },
+        "num_masks": 1
+      },
+      "yoga.png": {
+        "num_detections": 1,
+        "box_confidences": [
+          0.9161173701286316
+        ],
+        "mean_box_conf": 0.9161,
+        "speed_ms": {
+          "preprocess": 1.3,
+          "inference": 13.6,
+          "postprocess": 15.48,
+          "total": 30.38
+        },
+        "num_masks": 1
+      }
+    },
+    "aggregate": {
+      "avg_inference_ms": 0.0,
+      "avg_total_ms": 27.41,
+      "fps": 36.5,
+      "mean_person_confidence": 0.9201,
+      "mean_keypoint_confidence": 0.0
+    }
+  },
+  "video_benchmark": {
+    "yolo11n-pose": {
+      "frames_tested": 45,
+      "total_seconds": 3.57,
+      "fps": 12.6,
+      "ms_per_frame": 79.25
+    },
+    "yolo11m-pose": {
+      "frames_tested": 45,
+      "total_seconds": 2.58,
+      "fps": 17.4,
+      "ms_per_frame": 57.37
+    },
+    "yolo11x-pose": {
+      "frames_tested": 45,
+      "total_seconds": 5.19,
+      "fps": 8.7,
+      "ms_per_frame": 115.34
+    },
+    "yolov8m-pose": {
+      "frames_tested": 45,
+      "total_seconds": 1.84,
+      "fps": 24.4,
+      "ms_per_frame": 40.9
+    },
+    "yolo11m-seg": {
+      "frames_tested": 45,
+      "total_seconds": 5.19,
+      "fps": 8.7,
+      "ms_per_frame": 115.37
+    },
+    "rtdetr-l": {
+      "frames_tested": 45,
+      "total_seconds": 5.67,
+      "fps": 7.9,
+      "ms_per_frame": 125.96
+    }
+  }
+}
