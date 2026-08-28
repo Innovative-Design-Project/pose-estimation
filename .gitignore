@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.env
 venv/
 env/
 .venv/
@@ -11,3 +10,5 @@ env/
 *.pt
 runs/
 .DS_Store
+config.bat
+node_modules
