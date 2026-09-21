@@ -6,18 +6,18 @@ graph TD
     classDef model fill:#8e44ad,stroke:#9b59b6,stroke-width:2px,color:#fff;
 
     %% Nodes
-    subgraph Data Collection
+    subgraph data_collection [Data Collection]
         A["download_frames.py"]:::script
         RawData[("Raw Images\n(Roboflow)")]:::data
     end
 
-    subgraph Auto-Labeling
+    subgraph auto_labeling [Auto-Labeling]
         B["pseudo_label.py"]:::script
         BaseModel{{"yolo11m-pose.pt\n(Base Model)"}}:::model
         PseudoData[("YOLO Pseudo-Labels")]:::data
     end
 
-    subgraph Manual Correction (CVAT)
+    subgraph manual_correction [Manual Correction (CVAT)]
         C["to_coco_keypoints.py"]:::script
         CocoImport[("COCO Keypoints JSON\n(CVAT Import)")]:::data
         CVAT["👨‍💻 Manual Review in CVAT\n(Fix skeletons)"]:::manual
@@ -26,7 +26,7 @@ graph TD
         CorrectedYolo[("Corrected YOLO Labels")]:::data
     end
 
-    subgraph Dataset Prep & Training
+    subgraph dataset_prep [Dataset Prep & Training]
         E["build_dataset.py"]:::script
         FinalDataset[("Final Dataset\n(train/val & data.yaml)")]:::data
         F["train.py"]:::script
