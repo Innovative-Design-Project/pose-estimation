@@ -1,0 +1,53 @@
+graph TD
+    %% Define Styles
+    classDef script fill:#2c3e50,stroke:#34495e,stroke-width:2px,color:#ecf0f1;
+    classDef manual fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff;
+    classDef data fill:#27ae60,stroke:#2ecc71,stroke-width:2px,color:#fff;
+    classDef model fill:#8e44ad,stroke:#9b59b6,stroke-width:2px,color:#fff;
+
+    %% Nodes
+    subgraph Data Collection
+        A["download_frames.py"]:::script
+        RawData[("Raw Images\n(Roboflow)")]:::data
+    end
+
+    subgraph Auto-Labeling
+        B["pseudo_label.py"]:::script
+        BaseModel{{"yolo11m-pose.pt\n(Base Model)"}}:::model
+        PseudoData[("YOLO Pseudo-Labels")]:::data
+    end
+
+    subgraph Manual Correction (CVAT)
+        C["to_coco_keypoints.py"]:::script
+        CocoImport[("COCO Keypoints JSON\n(CVAT Import)")]:::data
+        CVAT["👨‍💻 Manual Review in CVAT\n(Fix skeletons)"]:::manual
+        CocoExport[("Corrected COCO JSON\n(CVAT Export)")]:::data
+        D["from_coco_keypoints.py"]:::script
+        CorrectedYolo[("Corrected YOLO Labels")]:::data
+    end
+
+    subgraph Dataset Prep & Training
+        E["build_dataset.py"]:::script
+        FinalDataset[("Final Dataset\n(train/val & data.yaml)")]:::data
+        F["train.py"]:::script
+        FinalModel{{"Custom Sports\nPose Model"}}:::model
+    end
+
+    %% Connections
+    A -->|"Downloads"| RawData
+    RawData -->|"Inputs to"| B
+    BaseModel -.->|"Used by"| B
+    B -->|"Generates"| PseudoData
+    
+    PseudoData -->|"Inputs to"| C
+    C -->|"Converts to"| CocoImport
+    CocoImport -->|"Upload to"| CVAT
+    CVAT -->|"Export from"| CocoExport
+    CocoExport -->|"Inputs to"| D
+    D -->|"Converts back to"| CorrectedYolo
+    
+    RawData -->|"Inputs to"| E
+    CorrectedYolo -->|"Inputs to"| E
+    E -->|"Creates"| FinalDataset
+    FinalDataset -->|"Trains with"| F
+    F -->|"Outputs"| FinalModel
