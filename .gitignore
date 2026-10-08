@@ -17,3 +17,5 @@ sports_pipeline/data/
 .DS_Store
 config.bat
 node_modules
+
+.env
