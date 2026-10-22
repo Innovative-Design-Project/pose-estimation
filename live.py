@@ -235,14 +235,16 @@ def main():
 
     start_wall = datetime.now()
     t0 = time.monotonic()
-    grabber.start()
-    last_index, analysed, latency_ms = -1, 0, 0.0
-    annotated_written = -1
-    try:
-        while True:
-            now = time.monotonic()
-            if args.max_seconds and now - t0 >= args.max_seconds:
-                break
+    stop = threading.Event()
+    shown = {"frame": None, "lock": threading.Lock()}  # newest annotated frame for the window
+    analysed = 0
+
+    def pose_loop():
+        # Runs off the main thread: on macOS cv2.waitKey alone takes ~15 ms per call,
+        # so keeping the window on the main thread stops it from throttling inference.
+        nonlocal analysed
+        last_index, annotated_written = -1, -1
+        while not stop.is_set():
             item = grabber.newest_after(last_index)
             if item is None:
                 if grabber.finished:
@@ -279,13 +281,31 @@ def main():
                     annotated_writer.write(annotated)
                 annotated_written = index
 
-            if not args.no_display:
-                cv2.imshow(window, annotated)
-                if cv2.waitKey(1) & 0xFF in (ord("q"), 27):
-                    break
+            with shown["lock"]:
+                shown["frame"] = annotated
+        stop.set()
+
+    worker = threading.Thread(target=pose_loop, daemon=True)
+    grabber.start()
+    worker.start()
+    try:
+        while not stop.is_set():
+            if args.max_seconds and time.monotonic() - t0 >= args.max_seconds:
+                break
+            if args.no_display:
+                stop.wait(0.05)
+                continue
+            with shown["lock"]:
+                frame, shown["frame"] = shown["frame"], None
+            if frame is not None:
+                cv2.imshow(window, frame)
+            if cv2.waitKey(1) & 0xFF in (ord("q"), 27):
+                break
     except KeyboardInterrupt:
         pass
     finally:
+        stop.set()
+        worker.join(timeout=5)
         grabber.stopped = True
         grabber.join(timeout=2)
         cap.release()
