@@ -1,12 +1,12 @@
 # High-Precision Human Pose Estimation
 
-State-of-the-art 2D human pose estimation pipeline using **Ultralytics YOLO26m-pose** (Medium end-to-end architecture) with automatic GPU/MPS hardware acceleration. Accurately detects and tracks 17 COCO body keypoints across complex postures, yoga positions, dance movements, and video streams.
+State-of-the-art 2D human pose estimation pipeline using **Ultralytics YOLO11m-pose** (Medium architecture) with automatic GPU/MPS hardware acceleration. Accurately detects and tracks 17 COCO body keypoints across complex postures, yoga positions, dance movements, and video streams.
 
 ---
 
 ## Features
 
-- **Default Model (`yolo26m-pose.pt`)**: High-performance Medium architecture (~24.2M parameters, 85.5 GFLOPs) offering fast inference and accurate joint localization on complex poses (like Warrior and Boat poses).
+- **Default Model (`yolo11m-pose.pt`)**: Medium architecture used for offline processing (`main.py`) and the fine-tuning pipeline. Live mode (`live.py`) defaults to the faster `yolo11n-pose.pt`. Weights are downloaded automatically on first use.
 - **Hardware Acceleration**: Automatic device detection supporting **Apple Silicon (MPS)**, **NVIDIA (CUDA)**, and fallback CPU.
 - **Batch Processing**: Automatically scans and processes all images and videos from designated input folders.
 - **Visual Annotations & Logging**: Outputs rendered skeleton diagrams, bounding boxes, and prints keypoint coordinates with confidence scores.
@@ -40,7 +40,8 @@ pose-estimation/
 ├── outputs/            # Output annotated images & videos
 ├── main.py             # Main inference & processing script
 ├── requirements.txt    # Project dependencies
-├── yolo26m-pose.pt     # Default pose model weights (Medium)
+├── live.py             # Live camera pose + session recording
+├── yolo11m-pose.pt     # Default pose model weights (Medium, auto-downloaded)
 └── README.md           # Documentation
 ```
 
@@ -91,15 +92,32 @@ python main.py --device cuda    # NVIDIA GPU
 python main.py --device cpu     # CPU
 ```
 
+### 3. Live Camera Mode (`live.py`)
+Runs pose estimation on a webcam or phone camera in real time and records the session:
+```bash
+python live.py                      # default camera, records to sessions/<timestamp>/
+python live.py --list-cameras       # find the index of a phone (macOS Continuity Camera)
+python live.py --source 1 --cam-fps 60
+python live.py --source videos/basketball_sportsmot_test.mp4   # replay a file as if live
+python live.py --no-record          # preview only
+```
+Press `q` or `Esc` to stop. Each session folder contains `raw.mp4` (every frame, no overlay),
+`frame_times.csv` (capture timestamps), `keypoints.jsonl` (17 keypoints per person for every analysed
+frame), `meta.json`, and `annotated.mp4` with `--save-annotated`. On macOS, allow camera access for
+your terminal in System Settings > Privacy & Security > Camera.
+
 ---
 
 ## Model Benchmark
 
-| Model | Parameters | GFLOPs | Accuracy on Complex Poses | Recommended For |
+Measured on an Apple M4 laptop, 720p frames, pose inference only:
+
+| Model | Device | Latency / frame | Throughput | Use |
 | :--- | :--- | :--- | :--- | :--- |
-| **`yolo26n-pose`** | ~3.68 M | 10.4 | Low (Struggles with wide lunges) | Edge / IoT Devices |
-| **`yolo26m-pose`** | ~24.2 M | 85.5 | High (Good balance) | Real-time high-FPS video |
-| **`yolo11x-pose`** | **~58.8 M** | **204.2** | **Flawless (State-of-the-Art)** | **Studio, athletic & yoga analysis** |
+| `yolo11n-pose` | CPU | 20 ms | ~51 fps | Live mode (default for `live.py`) |
+| `yolo11n-pose` | MPS | 22 ms | ~45 fps | Live mode |
+| `yolo11m-pose` | MPS | 52 ms | ~19 fps | Offline processing (default for `main.py`) |
+| `yolo11m-pose` | CPU | 80 ms | ~12 fps | Offline processing |
 
 ---
 

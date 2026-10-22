@@ -109,7 +109,7 @@ def main():
     parser.add_argument("--images-dir", type=str, default="images", help="Input images directory")
     parser.add_argument("--videos-dir", type=str, default="videos", help="Input videos directory")
     parser.add_argument("--output-dir", type=str, default="outputs", help="Output directory")
-    parser.add_argument("--model", type=str, default="yolo26m-pose.pt", help="Path to YOLO model weights")
+    parser.add_argument("--model", type=str, default="yolo11m-pose.pt", help="Path to YOLO model weights")
     parser.add_argument("--device", type=str, default="", help="Device (cpu, cuda, mps)")
     parser.add_argument("--imgsz", type=int, default=640, help="Inference image size")
     parser.add_argument("--conf", type=float, default=0.25, help="Confidence threshold")

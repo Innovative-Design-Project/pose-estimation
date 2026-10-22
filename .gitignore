@@ -18,3 +18,6 @@ sports_pipeline/data/
 .DS_Store
 config.bat
 node_modules
+
+# Recorded practice sessions (video + keypoints)
+sessions/
