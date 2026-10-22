@@ -9,7 +9,7 @@ import json
 import os
 
 
-def coco_to_yolo_pose(coco: dict, lbl_dir: str):
+def coco_to_yolo_pose(coco: dict, lbl_dir: str, keep_empty: bool = False):
     images_by_id = {img["id"]: img for img in coco["images"]}
     anns_by_image = {}
     for ann in coco["annotations"]:
@@ -21,7 +21,7 @@ def coco_to_yolo_pose(coco: dict, lbl_dir: str):
         w, h = img["width"], img["height"]
         stem = os.path.splitext(img["file_name"])[0]
         anns = anns_by_image.get(img_id, [])
-        if not anns:
+        if not anns and not keep_empty:
             continue
 
         lines = []
@@ -40,7 +40,7 @@ def coco_to_yolo_pose(coco: dict, lbl_dir: str):
             lines.append(line)
 
         with open(os.path.join(lbl_dir, f"{stem}.txt"), "w") as f:
-            f.write("\n".join(lines) + "\n")
+            f.write("\n".join(lines) + "\n" if lines else "")
         written += 1
 
     return written
@@ -51,15 +51,27 @@ def main():
     parser.add_argument("--sport", required=True, choices=["basketball", "hockey"])
     parser.add_argument("--coco-json", required=True, help="Path to the corrected COCO Keypoints export from CVAT")
     parser.add_argument("--data-root", default=os.path.join(os.path.dirname(__file__), "data"))
+    parser.add_argument(
+        "--split", choices=["val", "test"], default=None,
+        help="Write hand-labelled gold labels to data/gold/<sport>/<split>/labels instead of pseudo/",
+    )
     args = parser.parse_args()
 
     with open(args.coco_json) as f:
         coco = json.load(f)
 
-    lbl_dir = os.path.join(args.data_root, "pseudo", args.sport, "labels")
-    n = coco_to_yolo_pose(coco, lbl_dir)
-    print(f"[{args.sport}] wrote {n} corrected label files -> {lbl_dir}")
-    print("Now re-run: python sports_pipeline/build_dataset.py")
+    if args.split:
+        # Frames with no people still get an (empty) label file: for evaluation
+        # they are true negatives, so any detection on them is a false positive.
+        lbl_dir = os.path.join(args.data_root, "gold", args.sport, args.split, "labels")
+        n = coco_to_yolo_pose(coco, lbl_dir, keep_empty=True)
+        print(f"[{args.sport}/{args.split}] wrote {n} gold label files -> {lbl_dir}")
+        print(f"Now run: python sports_pipeline/evaluate.py --split {args.split}")
+    else:
+        lbl_dir = os.path.join(args.data_root, "pseudo", args.sport, "labels")
+        n = coco_to_yolo_pose(coco, lbl_dir)
+        print(f"[{args.sport}] wrote {n} corrected label files -> {lbl_dir}")
+        print("Now re-run: python sports_pipeline/build_dataset.py")
 
 
 if __name__ == "__main__":

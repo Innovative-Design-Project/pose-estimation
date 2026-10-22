@@ -8,6 +8,7 @@ import the resulting json alongside the matching images into a CVAT task.
 import argparse
 import json
 import os
+import shutil
 
 from PIL import Image
 
@@ -51,27 +52,35 @@ def yolo_pose_line_to_coco(line: str, img_w: int, img_h: int):
     return bbox, keypoints, num_labeled
 
 
-def build_coco(img_dir: str, lbl_dir: str) -> dict:
+def build_coco(img_dir: str, lbl_dir: str, image_names=None) -> dict:
+    """Pseudo-labelled frames by default; with `image_names`, exactly those frames
+    (frames without a pseudo-label are exported with no skeletons to draw from scratch)."""
     images, annotations = [], []
     img_id, ann_id = 1, 1
 
-    label_files = sorted(f for f in os.listdir(lbl_dir) if f.endswith(".txt"))
-    for lbl_name in label_files:
-        stem = os.path.splitext(lbl_name)[0]
-        img_candidates = [
-            f for f in os.listdir(img_dir)
-            if os.path.splitext(f)[0] == stem and f.lower().endswith((".jpg", ".jpeg", ".png"))
-        ]
-        if not img_candidates:
-            continue
-        img_name = img_candidates[0]
+    if image_names is None:
+        label_stems = sorted(os.path.splitext(f)[0] for f in os.listdir(lbl_dir) if f.endswith(".txt"))
+        image_names = []
+        for stem in label_stems:
+            img_candidates = [
+                f for f in os.listdir(img_dir)
+                if os.path.splitext(f)[0] == stem and f.lower().endswith((".jpg", ".jpeg", ".png"))
+            ]
+            if img_candidates:
+                image_names.append(img_candidates[0])
+
+    for img_name in image_names:
         img_path = os.path.join(img_dir, img_name)
         with Image.open(img_path) as im:
             w, h = im.size
 
         images.append({"id": img_id, "file_name": img_name, "width": w, "height": h})
 
-        with open(os.path.join(lbl_dir, lbl_name)) as f:
+        lbl_path = os.path.join(lbl_dir, os.path.splitext(img_name)[0] + ".txt")
+        if not os.path.exists(lbl_path):
+            img_id += 1
+            continue
+        with open(lbl_path) as f:
             for line in f:
                 if not line.strip():
                     continue
@@ -107,14 +116,32 @@ def main():
     parser = argparse.ArgumentParser(description="YOLO-pose -> COCO Keypoints 1.0 (for CVAT import)")
     parser.add_argument("--sport", required=True, choices=["basketball", "hockey"])
     parser.add_argument("--data-root", default=os.path.join(os.path.dirname(__file__), "data"))
+    parser.add_argument(
+        "--split", choices=["val", "test"], default=None,
+        help="Export only this hand-label split (from split_dataset.py) into data/gold/<sport>/<split>/",
+    )
     parser.add_argument("--out", default=None, help="Output json path (default: <data-root>/pseudo/<sport>/coco_keypoints.json)")
     args = parser.parse_args()
 
-    img_dir = os.path.join(args.data_root, "pseudo", args.sport, "images")
     lbl_dir = os.path.join(args.data_root, "pseudo", args.sport, "labels")
-    out_path = args.out or os.path.join(args.data_root, "pseudo", args.sport, "coco_keypoints.json")
+    if args.split:
+        # Images come from raw/, since frames the base model missed entirely are
+        # not in pseudo/ but still need to be labelled.
+        img_dir = os.path.join(args.data_root, "raw", args.sport, "images")
+        with open(os.path.join(args.data_root, "splits", args.sport, f"{args.split}.txt")) as f:
+            image_names = [line.strip() for line in f if line.strip()]
+        gold_dir = os.path.join(args.data_root, "gold", args.sport, args.split)
+        os.makedirs(os.path.join(gold_dir, "images"), exist_ok=True)
+        for name in image_names:
+            shutil.copy2(os.path.join(img_dir, name), os.path.join(gold_dir, "images", name))
+        out_path = args.out or os.path.join(gold_dir, "coco_prefill.json")
+        coco = build_coco(img_dir, lbl_dir, image_names)
+        print(f"[{args.sport}/{args.split}] images to upload to CVAT: {os.path.join(gold_dir, 'images')}")
+    else:
+        img_dir = os.path.join(args.data_root, "pseudo", args.sport, "images")
+        out_path = args.out or os.path.join(args.data_root, "pseudo", args.sport, "coco_keypoints.json")
+        coco = build_coco(img_dir, lbl_dir)
 
-    coco = build_coco(img_dir, lbl_dir)
     with open(out_path, "w") as f:
         json.dump(coco, f)
 

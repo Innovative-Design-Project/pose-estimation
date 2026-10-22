@@ -2,8 +2,13 @@
 
 Takes sports_pipeline/data/pseudo/<sport>/{images,labels}/ (or, after manual
 review in Roboflow/CVAT, a corrected copy in the same YOLO-pose layout),
-merges basketball + hockey, splits train/val, and writes a data.yaml usable
-directly with `yolo pose train`.
+splits train/val, and writes a data.yaml usable directly with `yolo pose train`.
+
+If split_dataset.py has been run for a sport, its clip-level split is used:
+train = pseudo labels for the train clips, val = hand-labelled gold labels for
+the val clips (falling back to pseudo labels, with a warning, until they exist).
+Test clips are never copied, so the test set stays unseen. Without a split
+file the old random frame-level split is used.
 """
 import argparse
 import os
@@ -23,9 +28,50 @@ names:
 """
 
 
+def read_list(path: str) -> list:
+    with open(path) as f:
+        return [line.strip() for line in f if line.strip()]
+
+
+def random_split_entries(img_dir: str, lbl_dir: str, val_frac: float) -> list:
+    stems = sorted(os.path.splitext(f)[0] for f in os.listdir(lbl_dir) if f.endswith(".txt"))
+    random.shuffle(stems)
+    val_stems = set(stems[:max(1, int(len(stems) * val_frac))])
+    img_by_stem = {os.path.splitext(f)[0]: f for f in os.listdir(img_dir)}
+    return [
+        ("val" if stem in val_stems else "train", os.path.join(img_dir, img_by_stem[stem]), os.path.join(lbl_dir, f"{stem}.txt"))
+        for stem in stems if stem in img_by_stem
+    ]
+
+
+def clip_split_entries(sport: str, img_dir: str, lbl_dir: str, split_dir: str, gold_root: str) -> list:
+    entries = []
+    for name in read_list(os.path.join(split_dir, "train.txt")):
+        lbl = os.path.join(lbl_dir, os.path.splitext(name)[0] + ".txt")
+        if os.path.exists(lbl):  # frames with no pseudo detections have nothing to train on
+            entries.append(("train", os.path.join(img_dir, name), lbl))
+
+    gold_img = os.path.join(gold_root, sport, "val", "images")
+    gold_lbl = os.path.join(gold_root, sport, "val", "labels")
+    val_names = read_list(os.path.join(split_dir, "val.txt"))
+    if os.path.isdir(gold_lbl):
+        for name in val_names:
+            lbl = os.path.join(gold_lbl, os.path.splitext(name)[0] + ".txt")
+            if os.path.exists(lbl):
+                entries.append(("val", os.path.join(gold_img, name), lbl))
+    else:
+        print(f"[{sport}] WARNING: no gold val labels at {gold_lbl}; using pseudo labels for val. "
+              "Val metrics will only measure agreement with the base model.")
+        for name in val_names:
+            lbl = os.path.join(lbl_dir, os.path.splitext(name)[0] + ".txt")
+            if os.path.exists(lbl):
+                entries.append(("val", os.path.join(img_dir, name), lbl))
+    return entries
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build the merged train/val sports-pose dataset")
-    parser.add_argument("--sports", nargs="+", default=["basketball", "hockey"])
+    parser.add_argument("--sports", nargs="+", default=["basketball"])
     parser.add_argument(
         "--source-root",
         default=os.path.join(os.path.dirname(__file__), "data", "pseudo"),
@@ -35,7 +81,9 @@ def main():
         "--out-root",
         default=os.path.join(os.path.dirname(__file__), "data", "sports_pose_dataset"),
     )
-    parser.add_argument("--val-frac", type=float, default=0.15)
+    parser.add_argument("--splits-root", default=os.path.join(os.path.dirname(__file__), "data", "splits"))
+    parser.add_argument("--gold-root", default=os.path.join(os.path.dirname(__file__), "data", "gold"))
+    parser.add_argument("--val-frac", type=float, default=0.15, help="Only used when no split file exists")
     parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()
 
@@ -53,33 +101,22 @@ def main():
             print(f"[{sport}] skipping, no images at {img_dir}")
             continue
 
-        stems = sorted(os.path.splitext(f)[0] for f in os.listdir(lbl_dir) if f.endswith(".txt"))
-        random.shuffle(stems)
-        n_val = max(1, int(len(stems) * args.val_frac))
-        val_stems = set(stems[:n_val])
+        split_dir = os.path.join(args.splits_root, sport)
+        if os.path.exists(os.path.join(split_dir, "train.txt")):
+            entries = clip_split_entries(sport, img_dir, lbl_dir, split_dir, args.gold_root)
+        else:
+            entries = random_split_entries(img_dir, lbl_dir, args.val_frac)
 
-        for stem in stems:
-            split = "val" if stem in val_stems else "train"
-            img_candidates = [f for f in os.listdir(img_dir) if os.path.splitext(f)[0] == stem]
-            if not img_candidates:
-                continue
-            img_name = img_candidates[0]
-            ext = os.path.splitext(img_name)[1]
+        counts = {"train": 0, "val": 0}
+        for split, img_path, lbl_path in entries:
+            stem, ext = os.path.splitext(os.path.basename(img_path))
+            shutil.copy2(img_path, os.path.join(args.out_root, "images", split, f"{sport}_{stem}{ext}"))
+            shutil.copy2(lbl_path, os.path.join(args.out_root, "labels", split, f"{sport}_{stem}.txt"))
+            counts[split] += 1
+        total_train += counts["train"]
+        total_val += counts["val"]
 
-            shutil.copy2(
-                os.path.join(img_dir, img_name),
-                os.path.join(args.out_root, "images", split, f"{sport}_{stem}{ext}"),
-            )
-            shutil.copy2(
-                os.path.join(lbl_dir, f"{stem}.txt"),
-                os.path.join(args.out_root, "labels", split, f"{sport}_{stem}.txt"),
-            )
-            if split == "train":
-                total_train += 1
-            else:
-                total_val += 1
-
-        print(f"[{sport}] {len(stems)} labeled frames -> {len(stems) - n_val} train / {n_val} val")
+        print(f"[{sport}] {counts['train']} train / {counts['val']} val")
 
     yaml_path = os.path.join(args.out_root, "sports_pose.yaml")
     with open(yaml_path, "w") as f:
