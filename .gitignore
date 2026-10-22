@@ -23,4 +23,3 @@ sessions/
 models/
 
 # Secrets (API keys)
-.env
