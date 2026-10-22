@@ -13,6 +13,14 @@ Each run creates sessions/<YYYYmmdd-HHMMSS>/ with:
   annotated.mp4     preview with skeleton + HUD (only with --save-annotated)
   meta.json         source, model, device, resolution, fps and frame counts
 
+Coaching (on by default, --no-coach for pose only): the practising player is
+locked and smoothed, the ball is tracked (once sports_pipeline/train_ball.py
+has produced weights), shots / makes / dribbles are detected, one cue per shot
+is spoken (ElevenLabs if ELEVENLABS_API_KEY is set, phrased by Claude if
+ANTHROPIC_API_KEY is set), and everything is stored in sessions/coach.db plus
+key frames in <session>/shots/ for the dashboard (streamlit run dashboard.py).
+At start you drag a box around the rim (c skips; --hoop last reuses the previous one).
+
 Keys in the preview window: q / Esc to stop.
 
 Examples:
@@ -20,6 +28,7 @@ Examples:
   python live.py --list-cameras                   # find the phone (Continuity Camera) index
   python live.py --source 1 --width 1920 --height 1080 --cam-fps 60
   python live.py --source videos/basketball_sportsmot_test.mp4   # replay a file in real time
+  python live.py --hoop last --shooting-hand left --voice say
 """
 import argparse
 import collections
@@ -27,12 +36,22 @@ import json
 import os
 import threading
 import time
+import traceback
 from datetime import datetime
 
 import cv2
+from dotenv import load_dotenv
 from ultralytics import YOLO
 
+from coach.ball import DEFAULT_BALL_MODEL, BallDetector
+from coach.engine import CoachEngine
+from coach.hoop import Hoop, calibrate
+from coach.llm import CuePhraser
+from coach.store import SessionStore
+from coach.voice import Voice
 from main import KEYPOINT_NAMES, get_device
+
+load_dotenv()  # ANTHROPIC_API_KEY / ELEVENLABS_API_KEY from .env
 
 VIDEO_EXTS = (".mp4", ".avi", ".mkv", ".mov")
 
@@ -173,6 +192,39 @@ def draw_hud(frame, lines, recording: bool, elapsed: float):
         cv2.putText(frame, label, (x, 33), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2, cv2.LINE_AA)
 
 
+def sessions_root(args) -> str:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    return args.sessions_dir if os.path.isabs(args.sessions_dir) else os.path.join(base_dir, args.sessions_dir)
+
+
+def setup_hoop(args, cap, is_file: bool, root: str, session_dir):
+    """Rim box from --hoop; calibration uses the first frame (file sources are rewound)."""
+    last_path = os.path.join(root, "last_hoop.json")
+    hoop = None
+    if args.hoop == "none":
+        return None
+    if args.hoop == "last":
+        hoop = Hoop.load(last_path) if os.path.exists(last_path) else None
+        if hoop is None:
+            print("No previous rim saved; make/miss is disabled. Use --hoop calibrate once.")
+    elif args.hoop == "calibrate":
+        if args.no_display:
+            print("--no-display: skipping rim calibration (make/miss disabled)")
+            return None
+        ok, frame = cap.read()
+        if is_file:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+        hoop = calibrate(frame) if ok else None
+    else:
+        hoop = Hoop.parse(args.hoop)
+    if hoop is not None:
+        os.makedirs(root, exist_ok=True)
+        hoop.save(last_path)
+        if session_dir:
+            hoop.save(os.path.join(session_dir, "hoop.json"))
+    return hoop
+
+
 def main():
     parser = argparse.ArgumentParser(description="Live pose estimation with session recording")
     parser.add_argument("--source", default="0", help="Camera index, stream URL or video file (default: 0)")
@@ -189,6 +241,14 @@ def main():
     parser.add_argument("--save-annotated", action="store_true", help="Also save the preview with overlay")
     parser.add_argument("--no-display", action="store_true", help="Run without a preview window")
     parser.add_argument("--max-seconds", type=float, default=0, help="Stop after this many seconds (0 = until q)")
+    parser.add_argument("--no-coach", action="store_true", help="Pose and recording only (no shots, voice or store)")
+    parser.add_argument("--hoop", default="calibrate", help="calibrate, last, none, or x1,y1,x2,y2")
+    parser.add_argument("--shooting-hand", choices=["right", "left"], default="right")
+    parser.add_argument("--ball-model", default=DEFAULT_BALL_MODEL, help="Ball detector weights ('' to disable)")
+    parser.add_argument("--hands", choices=["shot", "always", "off"], default="shot",
+                        help="Hand landmarks around shots (default), on every frame, or off")
+    parser.add_argument("--voice", choices=["auto", "elevenlabs", "say", "print", "off"], default="auto")
+    parser.add_argument("--no-llm", action="store_true", help="Speak the rule text instead of Claude's phrasing")
     args = parser.parse_args()
 
     if args.list_cameras:
@@ -214,9 +274,7 @@ def main():
     raw_writer = annotated_writer = times_file = keypoints_file = None
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     if not args.no_record:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        sessions_dir = args.sessions_dir if os.path.isabs(args.sessions_dir) else os.path.join(base_dir, args.sessions_dir)
-        session_dir = os.path.join(sessions_dir, datetime.now().strftime("%Y%m%d-%H%M%S"))
+        session_dir = os.path.join(sessions_root(args), datetime.now().strftime("%Y%m%d-%H%M%S"))
         os.makedirs(session_dir, exist_ok=True)
         raw_writer = cv2.VideoWriter(os.path.join(session_dir, "raw.mp4"), fourcc, reported_fps, (width, height))
         times_file = open(os.path.join(session_dir, "frame_times.csv"), "w")
@@ -226,6 +284,24 @@ def main():
             annotated_writer = cv2.VideoWriter(os.path.join(session_dir, "annotated.mp4"), fourcc,
                                                reported_fps, (width, height))
         print(f"Recording session to {session_dir}")
+
+    engine = store = voice = None
+    hoop = None
+    if not args.no_coach:
+        hoop = setup_hoop(args, cap, is_file, sessions_root(args), session_dir)
+        session_id = os.path.basename(session_dir) if session_dir else "preview"
+        if session_dir is not None:
+            store = SessionStore(os.path.join(sessions_root(args), "coach.db"))
+            store.start_session(session_id, datetime.now().isoformat(timespec="seconds"), args.source, session_dir,
+                                args.shooting_hand, "live")
+        voice = Voice(args.voice)
+        engine = CoachEngine(
+            session_id, session_dir, shooting_hand=args.shooting_hand, hoop=hoop,
+            ball_detector=BallDetector(args.ball_model, device=device) if args.ball_model else None,
+            hands_mode=args.hands, store=store, voice=voice, phraser=CuePhraser(enabled=not args.no_llm),
+        )
+        print(f"Coaching on | rim: {'not set' if hoop is None else 'set'} | voice: {voice.mode} | "
+              f"ball: {'on' if engine.ball_detector and engine.ball_detector.available else 'off'}")
 
     grabber = FrameGrabber(cap, raw_writer, times_file, pace_fps=reported_fps if is_file else 0.0)
     pose_meter = FpsMeter()
@@ -240,6 +316,14 @@ def main():
     analysed = 0
 
     def pose_loop():
+        try:
+            pose_steps()
+        except Exception:
+            traceback.print_exc()  # end the session cleanly instead of freezing the preview
+        finally:
+            stop.set()
+
+    def pose_steps():
         # Runs off the main thread: on macOS cv2.waitKey alone takes ~15 ms per call,
         # so keeping the window on the main thread stops it from throttling inference.
         nonlocal analysed
@@ -266,13 +350,23 @@ def main():
                     "frame": index, "t": round(t_capture - t0, 4), "people": people,
                 }) + "\n")
 
-            annotated = result.plot()
+            hud = []
+            if engine is not None:
+                out = engine.process(index, t_capture - t0, frame, result)
+                annotated = frame.copy()
+                engine.draw(annotated, out["state"])
+                hud = engine.hud_lines()
+                if out["shot"]:
+                    s = out["shot"]
+                    print(f"shot {s['shot_no']} {s['kind']} {s['outcome']}: {s['cue']}")
+            else:
+                annotated = result.plot()
             latency_ms = (time.monotonic() - t_capture) * 1000
             draw_hud(annotated, [
                 f"Camera {grabber.meter.fps:5.1f} fps   Pose {pose_meter.fps:5.1f} fps",
                 f"Inference {infer_ms:4.0f} ms   Latency {latency_ms:4.0f} ms",
                 f"{os.path.basename(args.model)} on {device.upper()}   People: {len(people)}",
-            ], recording=session_dir is not None, elapsed=time.monotonic() - t0)
+            ] + hud, recording=session_dir is not None, elapsed=time.monotonic() - t0)
 
             if annotated_writer is not None:
                 # Repeat the annotated frame for raw frames skipped by inference, so
@@ -283,7 +377,6 @@ def main():
 
             with shown["lock"]:
                 shown["frame"] = annotated
-        stop.set()
 
     worker = threading.Thread(target=pose_loop, daemon=True)
     grabber.start()
@@ -318,6 +411,11 @@ def main():
                 f.close()
         if not args.no_display:
             cv2.destroyAllWindows()
+        if engine is not None:
+            engine.close()
+            voice.close()
+            print(f"Shots {engine.shot_count} (makes {engine.makes}, misses {engine.misses}), "
+                  f"dribbles {engine.dribbles.count}")
 
         captured = grabber.count
         measured_fps = captured / duration if duration > 0 else 0.0
@@ -343,7 +441,17 @@ def main():
                     "imgsz": args.imgsz,
                     "conf": args.conf,
                     "keypoint_names": KEYPOINT_NAMES,
+                    "coach": None if engine is None else {
+                        "shooting_hand": args.shooting_hand,
+                        "hoop": None if hoop is None else hoop.__dict__,
+                        "hands": args.hands,
+                        "ball_detector": bool(engine.ball_detector and engine.ball_detector.available),
+                    },
                 }, f, indent=2)
+            if store is not None:
+                store.finish_session(os.path.basename(session_dir), round(duration, 2),
+                                     json.load(open(os.path.join(session_dir, "meta.json"))))
+                store.close()
             print(f"Session saved to {session_dir}")
 
 
