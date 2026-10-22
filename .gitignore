@@ -21,3 +21,6 @@ node_modules
 
 # Recorded practice sessions (video + keypoints)
 sessions/
+
+# Downloaded model files (MediaPipe hand landmarker)
+models/

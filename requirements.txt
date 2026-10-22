@@ -1,6 +1,16 @@
-ultralytics>=8.0.0
-opencv-python>=4.8.0
-numpy
+ultralytics>=8.3.0
+# mediapipe depends on opencv-contrib-python; pin both OpenCV packages to the same
+# release so they share one consistent cv2 (contrib 5.x would also pull numpy 2).
+opencv-python==4.11.0.86
+opencv-contrib-python==4.11.0.86
+# Ultralytics on macOS rejects numpy 2.0-2.3.4, and Python 3.9 tops out at 2.0.2.
+numpy<2
+mediapipe>=1.0
+streamlit>=1.40
+anthropic>=0.100
+sounddevice>=0.5
+requests
 roboflow>=1.1.0
 python-dotenv>=1.0.0
 Pillow>=10.0.0
+pytest
