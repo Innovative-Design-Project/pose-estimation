@@ -1,6 +1,3 @@
-# Secrets
-.env
-
 # Python
 __pycache__/
 *.py[cod]
@@ -24,3 +21,6 @@ sessions/
 
 # Downloaded model files (MediaPipe hand landmarker)
 models/
+
+# Secrets (API keys)
+.env
