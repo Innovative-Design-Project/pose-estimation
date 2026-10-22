@@ -58,7 +58,10 @@ class BallTracker:
                 return x1 + vx * (t - t1), y1 + vy * (t - t1), r1
         return x1, y1, r1
 
-    def update(self, detections: List[Tuple[float, float, float, float]], t: float) -> Optional[Ball]:
+    def update(self, detections: List[Tuple[float, float, float, float]], t: float,
+               near_box: Optional[Tuple[float, float, float, float]] = None) -> Optional[Ball]:
+        """`near_box` (the player's box): a new track may only start close to the player,
+        which rejects orange/red clutter (crowd, jerseys, signs) far from the action."""
         pred = self._predict(t)
         best = None
         if pred is not None:
@@ -66,8 +69,14 @@ class BallTracker:
             near = [d for d in detections if math.hypot(d[0] - pred[0], d[1] - pred[1]) <= gate]
             if near:
                 best = min(near, key=lambda d: math.hypot(d[0] - pred[0], d[1] - pred[1]))
-        elif detections:
-            best = max(detections, key=lambda d: d[3])
+        else:
+            if near_box is not None:
+                x1, y1, x2, y2 = near_box
+                w, h = x2 - x1, y2 - y1
+                detections = [d for d in detections
+                              if x1 - 0.75 * w <= d[0] <= x2 + 0.75 * w and y1 - 0.5 * h <= d[1] <= y2 + 0.1 * h]
+            if detections:
+                best = max(detections, key=lambda d: d[3])
 
         while self.history and t - self.history[0][0] > self.history_s:
             self.history.popleft()

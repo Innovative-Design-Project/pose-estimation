@@ -6,6 +6,7 @@ import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from coach.ball import BallTracker  # noqa: E402
 from coach.coaching import Coach, issues  # noqa: E402
 from coach.events import DribbleCounter, ShotDetector, judge_make  # noqa: E402
 from coach.geometry import angle  # noqa: E402
@@ -99,6 +100,17 @@ def test_tracker_keeps_lock_on_first_player():
         moved = (100 + i, 100, 200 + i, 400)
         box, _ = tracker.update([bystander_near, moved], [0.9, 0.9], [k, k], i / 30)
         assert box == moved
+
+
+def test_ball_track_starts_only_near_player():
+    tracker = BallTracker()
+    player = (500, 200, 600, 500)
+    crowd_ball = (1100, 60, 10, 0.9)    # orange shirt in the stands, higher confidence
+    real_ball = (620, 330, 10, 0.5)
+    assert tracker.update([crowd_ball], 0.0, near_box=player) is None
+    assert tracker.update([crowd_ball, real_ball], 0.033, near_box=player)[:2] == (620, 330)
+    # Once tracking, the ball can fly away from the player (a shot).
+    assert tracker.update([(650, 300, 10, 0.6)], 0.066, near_box=player)[:2] == (650, 300)
 
 
 def test_one_euro_smooths_jitter():

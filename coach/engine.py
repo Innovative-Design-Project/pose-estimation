@@ -85,7 +85,7 @@ class CoachEngine:
         fs = FrameState(index=index, t=t, kpts=player_kpts, box=box)
 
         if self.ball_detector is not None and self.ball_detector.available:
-            fs.ball = self.ball_tracker.update(self.ball_detector(frame), t)
+            fs.ball = self.ball_tracker.update(self.ball_detector(frame), t, near_box=box)
 
         if self.hands is not None and player_kpts is not None and (
                 self.hands_mode == "always" or self.shots.active or self._wrist_above_shoulder(player_kpts)):

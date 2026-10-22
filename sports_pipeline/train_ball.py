@@ -10,6 +10,7 @@ the detector's val set), so near-duplicate frames never leak across splits.
 
     python sports_pipeline/train_ball.py            # build dataset + train
     python sports_pipeline/train_ball.py --prepare-only
+    python sports_pipeline/train_ball.py --resume     # continue after an interruption
 
 Weights end up in sports_pipeline/runs/ball_detector/weights/best.pt; copy or
 point live.py / analyze.py at them with --ball-model.
@@ -94,7 +95,14 @@ def main():
     parser.add_argument("--patience", type=int, default=10)
     parser.add_argument("--device", default="")
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--resume", action="store_true",
+                        help="Continue an interrupted run from runs/ball_detector/weights/last.pt")
     args = parser.parse_args()
+
+    if args.resume:
+        # Resuming restores the original run's settings (epochs, device, ...) from the checkpoint.
+        YOLO(os.path.join(HERE, "runs", "ball_detector", "weights", "last.pt")).train(resume=True)
+        return
 
     yaml_path = build_dataset(args.data_root, args.out_root)
     print(f"data.yaml: {yaml_path}")

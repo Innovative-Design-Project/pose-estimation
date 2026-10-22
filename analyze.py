@@ -83,6 +83,8 @@ def main():
     parser.add_argument("input", help="Session folder (from live.py) or a video file")
     parser.add_argument("--model", default=os.path.join(HERE, "yolo11m-pose.pt"))
     parser.add_argument("--ball-model", default=DEFAULT_BALL_MODEL, help="Ball detector weights ('' to disable)")
+    parser.add_argument("--ball-imgsz", type=int, default=960,
+                        help="Ball detector input size; larger finds small/far balls better but is slower")
     parser.add_argument("--hoop", default="auto", help="auto (session hoop.json), calibrate, none, or x1,y1,x2,y2")
     parser.add_argument("--shooting-hand", choices=["right", "left"], default="right")
     parser.add_argument("--hands", choices=["shot", "always", "off"], default="shot",
@@ -115,7 +117,7 @@ def main():
                         {**meta, "analysis_model": os.path.basename(args.model), "hoop": None if hoop is None else hoop.__dict__})
     engine = CoachEngine(
         session_id, session_dir, shooting_hand=args.shooting_hand, hoop=hoop,
-        ball_detector=BallDetector(args.ball_model, device=device) if args.ball_model else None,
+        ball_detector=BallDetector(args.ball_model, device=device, imgsz=args.ball_imgsz) if args.ball_model else None,
         hands_mode=args.hands, store=store,
     )
     pose = YOLO(args.model)
