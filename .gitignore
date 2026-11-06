@@ -13,7 +13,6 @@ runs/
 # Sports fine-tuning data (downloaded/generated, not source)
 sports_pipeline/data/
 .DS_Store
-config.bat
 node_modules
 
 # Recorded practice sessions (video + keypoints)
@@ -23,3 +22,4 @@ sessions/
 models/
 
 # Secrets (API keys)
+config.bat
